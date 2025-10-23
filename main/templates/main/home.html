@@ -10,7 +10,7 @@
     <meta name="description" content="Сервис для подбора автомобиля по социальному статусу.">
     <meta name="author" content="Алексеев Максим Андреевич">
     <title>Главная страница|Statuscar</title>
-    {% comment %} <link rel="stylesheet" href="normalize.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
     <link rel="stylesheet" href="{% static "css/home.css" %}">
 </head>
 <body>
@@ -18,10 +18,10 @@
         <div class="header-container container">
             <div class="header-container__logo">
                 <div class="header-logo__logo">
-                    <a href="{% url "main:home" %}"><p>STATUSCAR</p></a>
+                    <a href="{% url "home" %}"><p>STATUSCAR</p></a>
                 </div>
                 <div class="header-logo__tel">
-                    <img src="icons/SVG.png" alt="номер телефона" width="16" height="24">
+                    <img src="{% static "icons/SVG.png" %}" alt="номер телефона" width="16" height="24">
                     <p>+375-33-333-33-33</p>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 </ul>
             </nav>
             <div class="header-container__buttons">
-                <button class="header-container__account"><img src="icons/account.png" width="16" height="16"> Войти</button>
+                <button class="header-container__account"><img src="{% static "icons/account.png" %}" width="16" height="16"> Войти</button>
                 <button class="header-container__burger">
                     <div class="burger__lines">
                         <div class="burger__line"></div>
@@ -79,12 +79,12 @@
                         <div class="div-4__modal"></div>
                     </div>
                     <div class="car-search-form__button">
-                        <button type="submit"><img src="icons/Icon.png" alt="Поиск"></button>
+                        <button type="submit"><img src="{% static "icons/Icon.png" %}" alt="Поиск"></button>
                     </div>
                 </div>
             </form>
             <div class="container-car-search__car">
-                <img src="img/slider51.png" alt="Автомобиль">
+                <img src="{% static "img/slider51.png" %}" alt="Автомобиль">
             </div>
              <div class="car-search-modal">
                 <div class="car-search-modal-container container">
@@ -96,7 +96,7 @@
                     <div class="car-search__div-2">
                         <div class="car-search-div__find">
                             <label id="car-search-marka">
-                            <img src="icons/icons8-поиск-50.png" width="20" height="20" alt="Поиск">
+                            <img src="{% static "icons/icons8-поиск-50.png" %}" width="20" height="20" alt="Поиск">
                             </label>
                             <input 
                             type="text" 
@@ -120,7 +120,7 @@
                     <div class="car-search__div-3">
                         <div class="car-search-div__find">
                             <label>
-                            <img src="icons/icons8-поиск-50.png" width="20" height="20" alt="Поиск">
+                            <img src="{% static "icons/icons8-поиск-50.png" %}" width="20" height="20" alt="Поиск">
                             </label>
                             <input 
                             type="text" 
@@ -232,39 +232,39 @@
             <h2>Выбор по типу</h2>
             <div class="browse-your-type__blocks">
             <a class="browse-your-type__block" href="#">
-                <img src="icons/SVU.png" width="34" height="34" alt="SUV">
+                <img src="{% static "icons/SVU.png" %}" width="34" height="34" alt="SUV">
                 <p>SUV</p>
             </a>
             <a class="browse-your-type__block" href="#">
-                <img src="icons/SEDAN.png" width="34" height="34" alt="Седан">
+                <img src="{% static "icons/SEDAN.png" %}" width="34" height="34" alt="Седан">
                 <p>Седан</p>
             </a>
             <a class="browse-your-type__block" href="#">
-                <img src="icons/HATCHBACK.png" width="34" height="34" alt="Хэтчбэк">
+                <img src="{% static "icons/HATCHBACK.png" %}" width="34" height="34" alt="Хэтчбэк">
                 <p>Хэтчбэк</p>
             </a>
             <a class="browse-your-type__block" href="#">
-                <img src="icons/COUPE.png" width="34" height="34" alt="Купе">
+                <img src="{% static "icons/COUPE.png" %}" width="34" height="34" alt="Купе">
                 <p>Купе</p>
             </a>
             <a class="browse-your-type__block" href="#">
-                <img src="icons/CABRIOLET.png" width="34" height="34" alt="Кабриолет">
+                <img src="{% static "icons/CABRIOLET.png" %}" width="34" height="34" alt="Кабриолет">
                 <p>Кабриолет</p>
             </a>
             <a class="browse-your-type__block" href="#">
-                <img src="icons/transport.png" width="34" height="34" alt="Универсал">
+                <img src="{% static "icons/transport.png" %}" width="34" height="34" alt="Универсал">
                 <p>Универсал</p>
             </a>
             <a class="browse-your-type__block" href="#">
-                <img src="icons/VAN.png" width="34" height="34" alt="Фургон">
+                <img src="{% static "icons/VAN.png" %}" width="34" height="34" alt="Фургон">
                 <p>Фургон</p>
             </a>
             <a class="browse-your-type__block" href="#">
-                <img src="icons/icons8-пикап-64.png" width="34" height="34" alt="Пикап">
+                <img src="{% static "icons/icons8-пикап-64.png" %}" width="34" height="34" alt="Пикап">
                 <p>Пикап</p>
             </a>
             <a class="browse-your-type__block" href="#">
-                <img src="icons/free-icon-minivan-7281683.png" width="34" height="34" alt="Минивэн">
+                <img src="{% static "icons/free-icon-minivan-7281683.png" %}" width="34" height="34" alt="Минивэн">
                 <p>Минивэн</p>
             </a>
             </div>
@@ -277,12 +277,12 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ea harum minus voluptatibus ex, quis fugiat reiciendis delectus aperiam quos, nulla minima maxime magnam deserunt, iure blanditiis recusandae inventore eius?</p>
                 <div class="choose-your-one__a-left">
                     <a href="#">Найти авто
-                        <img src="icons/arrow.png">
+                        <img src="{% static "icons/arrow.png" %}">
                     </a>
-                    <img src="icons/arrow.png">
+                    <img src="{% static "icons/arrow.png" %}">
                 </div>
                 <div class="choose-your-one__img">
-                    <img src="img/electric-car.svg.png">
+                    <img src="{% static "img/electric-car.svg.png" %}">
                 </div>
             </div>
             <div class="choose-your-one__right">
@@ -290,11 +290,11 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, enim! Dolorem alias corporis incidunt, architecto magni enim asperiores nisi ipsa illo facere repellendus necessitatibus, quae voluptatum dicta praesentium veritatis repellat.</p>
                 <div class="choose-your-one__a-right">
                     <a href="#">Продать авто
-                        <img src="icons/arrow.png">
+                        <img src="{% static "icons/arrow.png" %}">
                     </a>
                 </div>
                 <div class="choose-your-one__img">
-                    <img src="img/electric-car2.svg fill.png">
+                    <img src="{% static "img/electric-car2.svg fill.png" %}">
                 </div>
             </div>
         </div>
@@ -311,7 +311,7 @@
             <div class="the-most-searched-cars__divider"></div>
             <div class="the-most-searched-cars__slider">
                 <div class="the-most-searched-cars__card">
-                    <img src="img/car-1.png">
+                    <img src="{% static "img/car-1.png" %}">
                     <div class="searched-cars__card-text">
                         <h5>Ford Transit - 2021</h5>
                         <p>D5 объёмом 4.0 литра, с технологией PowerPulse, в комплектации Momentum, 5-дверный, с полным приводом.</p>
@@ -319,15 +319,15 @@
                     <div class="searched-cars__divider"></div>
                     <div class="searched-cars__card-additional">
                         <div class="card-additional__block">
-                            <img src="icons/speedmetr.png" width="20" height="20">
+                            <img src="{% static "icons/speedmetr.png" %}" width="20" height="20">
                             <p>2500 км.</p>
                         </div>
                         <div class="card-additional__block">
-                            <img src="icons/typefuel.png" width="20" height="20">
+                            <img src="{% static "icons/typefuel.png" %}" width="20" height="20">
                             <p>Дизель</p>
                         </div>
                         <div class="card-additional__block">
-                            <img src="icons/box.png" width="20" height="20">
+                            <img src="{% static "icons/box.png" %}" width="20" height="20">
                             <p>Механика</p>
                         </div>
                     </div>
@@ -338,7 +338,7 @@
                     </div>
                 </div>
                 <div class="the-most-searched-cars__card">
-                    <img src="img/car-2.png">
+                    <img src="{% static "img/car-2.png" %}">
                     <div class="searched-cars__card-text">
                         <h5>Volkswagen Tiguan - 2019</h5>
                         <p>Бензиновый 2.0 TSI, комплектация Highline, 5-дверный, полный привод, автоматическая коробка передач.</p>
@@ -346,26 +346,26 @@
                     <div class="searched-cars__divider"></div>
                     <div class="searched-cars__card-additional">
                         <div class="card-additional__block">
-                        <img src="icons/speedmetr.png" width="20" height="20">
+                        <img src="{% static "icons/speedmetr.png" %}" width="20" height="20">
                         <p>65 000 км</p>
                         </div>
                         <div class="card-additional__block">
-                        <img src="icons/typefuel.png" width="20" height="20">
+                        <img src="{% static "icons/typefuel.png" %}" width="20" height="20">
                         <p>Бензин</p>
                         </div>
                         <div class="card-additional__block">
-                        <img src="icons/box.png" width="20" height="20">
+                        <img src="{% static "icons/box.png" %}" width="20" height="20">
                         <p>Автомат</p>
                         </div>
                     </div>
                     <div class="searched-cars__divider"></div>
                     <div class="searched-card__price">
                         <p>58 500 BYN</p>
-                        <a href="#">Подробнее<img src="icons/arrow.png" alt=""></a>
+                        <a href="#">Подробнее<img src="{% static "icons/arrow.png" %}" alt=""></a>
                     </div>
                 </div>
                 <div class="the-most-searched-cars__card">
-                    <img src="img/car-2.png">
+                    <img src="{% static "img/car-2.png" %}">
                     <div class="searched-cars__card-text">
                         <h5>Volkswagen Tiguan - 2019</h5>
                         <p>Бензиновый 2.0 TSI, комплектация Highline, 5-дверный, полный привод, автоматическая коробка передач.</p>
@@ -373,26 +373,26 @@
                     <div class="searched-cars__divider"></div>
                     <div class="searched-cars__card-additional">
                         <div class="card-additional__block">
-                        <img src="icons/speedmetr.png" width="20" height="20">
+                        <img src="{% static "icons/speedmetr.png" %}" width="20" height="20">
                         <p>65 000 км</p>
                         </div>
                         <div class="card-additional__block">
-                        <img src="icons/typefuel.png" width="20" height="20">
+                        <img src="{% static "icons/typefuel.png" %}" width="20" height="20">
                         <p>Бензин</p>
                         </div>
                         <div class="card-additional__block">
-                        <img src="icons/box.png" width="20" height="20">
+                        <img src="{% static "icons/box.png" %}" width="20" height="20">
                         <p>Автомат</p>
                         </div>
                     </div>
                     <div class="searched-cars__divider"></div>
                     <div class="searched-card__price">
                         <p>58 500 BYN</p>
-                        <a href="#">Подробнее<img src="icons/arrow.png" alt=""></a>
+                        <a href="#">Подробнее<img src="{% static "icons/arrow.png" %}" alt=""></a>
                     </div>
                 </div>
                 <div class="the-most-searched-cars__card">
-                    <img src="img/car-3.png">
+                    <img src="{% static "img/car-3.png" %}">
                     <div class="searched-cars__card-text">
                         <h5>BMW X5 - 2020</h5>
                         <p>Бензиновый 3.0 TwinPower Turbo, комплектация M Sport, 5-дверный, полный привод, автомат.</p>
@@ -400,28 +400,28 @@
                     <div class="searched-cars__divider"></div>
                     <div class="searched-cars__card-additional">
                         <div class="card-additional__block">
-                        <img src="icons/speedmetr.png" width="20" height="20">
+                        <img src="{% static "icons/speedmetr.png" %}" width="20" height="20">
                         <p>65 111 км</p>
                         </div>
                         <div class="card-additional__block">
-                        <img src="icons/typefuel.png" width="20" height="20">
+                        <img src="{% static "icons/typefuel.png" %}" width="20" height="20">
                         <p>Гибрид</p>
                         </div>
                         <div class="card-additional__block">
-                        <img src="icons/box.png" width="20" height="20">
+                        <img src="{% static "icons/box.png" %}" width="20" height="20">
                         <p>Автомат</p>
                         </div>
                     </div>
                     <div class="searched-cars__divider"></div>
                     <div class="searched-card__price">
                         <p>250 500 BYN</p>
-                        <a href="#">Подробнее<img src="icons/arrow.png" alt=""></a>
+                        <a href="#">Подробнее<img src="{% static "icons/arrow.png" %}" alt=""></a>
                     </div>
                 </div>
             </div>
             <div class="searched-cars__card-buttons">
-                <button class="searched-cars-button__left"><img src="icons/arrow-left.png"></button>
-                <button class="searched-cars-button__right"><img src="icons/arrow-right.png"></button>
+                <button class="searched-cars-button__left"><img src="{% static "icons/arrow-left.png" %}"></button>
+                <button class="searched-cars-button__right"><img src="{% static "icons/arrow-right.png" %}"></button>
             </div>
         </div>
     </section>
@@ -430,22 +430,22 @@
             <h2>Почему Стоит Выбрать Нас?</h2>
             <div class="container-why-choose-us__blocks">
                 <div class="container-why-choose-us__block">
-                    <img src="icons/choose-us_1.png">
+                    <img src="{% static "" %}">
                     <h3>Лучшие ценовые предложения РБ</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, dolor a ex.</p>
                 </div>
                 <div class="container-why-choose-us__block">
-                    <img src="icons/choose-us__2.png">
+                    <img src="{% static "icons/choose-us__2.png" %}">
                     <h3>Проверенные продавцы</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, dolor a ex.</p>
                 </div>
                 <div class="container-why-choose-us__block">
-                    <img src="icons/choose-us__3.png">
+                    <img src="{% static "icons/choose-us__3.png" %}">
                     <h3>Анализ истории авто</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, dolor a ex.</p>
                 </div>
                 <div class="container-why-choose-us__block">
-                    <img src="icons/choose-us__4.png">
+                    <img src="{% static "icons/choose-us__4.png" %}">
                     <h3>Максим лучший</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, dolor a ex.</p>
                 </div>
@@ -457,7 +457,7 @@
             <h2>Недавно просмотренные</h2>
             <div class="latest-cars__slider">
                 <div class="latest-cars__card">
-                    <img src="img/car-1.png">
+                    <img src="{% static "img/car-1.png" %}">
                     <div class="latest-cars__card-text">
                     <h5>Mercedes GLC - 2022</h5>
                     <p>2.0 дизель, полный привод, автомат, AMG.</p>
@@ -465,26 +465,26 @@
                     <div class="latest-cars__divider-inner"></div>
                     <div class="latest-cars__card-additional">
                     <div class="latest-card-additional__block">
-                        <img src="icons/speedmetr.png" width="20" height="20">
+                        <img src="{% static "icons/speedmetr.png" %}" width="20" height="20">
                         <p>15 000 км</p>
                     </div>
                     <div class="latest-card-additional__block">
-                        <img src="icons/typefuel.png" width="20" height="20">
+                        <img src="{% static "icons/typefuel.png" %}" width="20" height="20">
                         <p>Дизель</p>
                     </div>
                     <div class="latest-card-additional__block">
-                        <img src="icons/box.png" width="20" height="20">
+                        <img src="{% static "icons/box.png" %}" width="20" height="20">
                         <p>Автомат</p>
                     </div>
                     </div>
                     <div class="latest-cars__divider-inner"></div>
                     <div class="latest-card__price">
                     <p>89 000 BYN</p>
-                    <a href="#">Подробнее<img src="icons/arrow.png" alt=""></a>
+                    <a href="#">Подробнее<img src="{% static "icons/arrow.png" %}" alt=""></a>
                     </div>
                 </div>
                 <div class="latest-cars__card">
-                    <img src="img/car-3__latest.png">
+                    <img src="{% static "img/car-3__latest.png" %}">
                     <div class="latest-cars__card-text">
                     <h5>Audi A6 C6 RS6 - 2008</h5>
                     <p>4.0 бензин, полный привод, 580 л.с.</p>
@@ -492,26 +492,26 @@
                     <div class="latest-cars__divider-inner"></div>
                     <div class="latest-cars__card-additional">
                     <div class="latest-card-additional__block">
-                        <img src="icons/speedmetr.png" width="20" height="20">
+                        <img src="{% static "icons/speedmetr.png" %}" width="20" height="20">
                         <p>15 000 км</p>
                     </div>
                     <div class="latest-card-additional__block">
-                        <img src="icons/typefuel.png" width="20" height="20">
+                        <img src="{% static "icons/typefuel.png" %}" width="20" height="20">
                         <p>Дизель</p>
                     </div>
                     <div class="latest-card-additional__block">
-                        <img src="icons/box.png" width="20" height="20">
+                        <img src="{% static "icons/box.png" %}" width="20" height="20">
                         <p>Автомат</p>
                     </div>
                     </div>
                     <div class="latest-cars__divider-inner"></div>
                     <div class="latest-card__price">
                     <p>89 000 BYN</p>
-                    <a href="#">Подробнее<img src="icons/arrow.png" alt=""></a>
+                    <a href="#">Подробнее<img src="{% static "icons/arrow.png" %}" alt=""></a>
                     </div>
                 </div>
                 <div class="latest-cars__card">
-                    <img src="img/car-2__latest.png">
+                    <img src="{% static "img/car-2__latest.png" %}">
                     <div class="latest-cars__card-text">
                     <h5>Lada Vesta Long - 2025</h5>
                     <p>2.0 дизель, полный привод, автомат, AMG.</p>
@@ -519,28 +519,28 @@
                     <div class="latest-cars__divider-inner"></div>
                     <div class="latest-cars__card-additional">
                     <div class="latest-card-additional__block">
-                        <img src="icons/speedmetr.png" width="20" height="20">
+                        <img src="{% static "icons/speedmetr.png" %}" width="20" height="20">
                         <p>15 000 км</p>
                     </div>
                     <div class="latest-card-additional__block">
-                        <img src="icons/typefuel.png" width="20" height="20">
+                        <img src="{% static "icons/typefuel.png" %}" width="20" height="20">
                         <p>Дизель</p>
                     </div>
                     <div class="latest-card-additional__block">
-                        <img src="icons/box.png" width="20" height="20">
+                        <img src="{% static "icons/box.png" %}" width="20" height="20">
                         <p>Автомат</p>
                     </div>
                     </div>
                     <div class="latest-cars__divider-inner"></div>
                     <div class="latest-card__price">
                     <p>99 999 BYN</p>
-                    <a href="#">Подробнее<img src="icons/arrow.png" alt=""></a>
+                    <a href="#">Подробнее<img src="{% static "icons/arrow.png" %}" alt=""></a>
                     </div>
                 </div>
                 </div>
                 <div class="latest-cars__card-buttons">
-                <button class="latest-cars-button__left"><img src="icons/arrow-left.png"></button>
-                <button class="latest-cars-button__right"><img src="icons/arrow-right.png"></button>
+                <button class="latest-cars-button__left"><img src="{% static "icons/arrow-left.png" %}"></button>
+                <button class="latest-cars-button__right"><img src="{% static "icons/arrow-right.png" %}"></button>
             </div>
         </div>
     </section>
@@ -569,21 +569,21 @@
                     <h6><span>Audi</span> Центр Минск</h6>
                     <div class="who-is-statuscar-site__stars">★★★★★</div>
                     <p>сновано на 5008 отзывах</p>
-                    <img src="img/Yandex.png" width="50" height="50" alt="Yandex logo">
+                    <img src="{% static "img/Yandex.png" %}" width="50" height="50" alt="Yandex logo">
                 </div>
 
                 <div class="who-is-statuscar__site">
                     <h6>ALEKSEEV | SPIRIDONOV</h6>
                     <div class="who-is-statuscar-site__stars">★★★★★</div>
                     <p>сновано на 200 отзывах</p>
-                    <img src="img/Yandex.png" width="50" height="50" alt="Yandex logo">
+                    <img src="{% static "img/Yandex.png" %}" width="50" height="50" alt="Yandex logo">
                 </div>
                 
                 <div class="who-is-statuscar__site">
                     <h6>Профсоюз цент. р-н.</h6>
                     <div class="who-is-statuscar-site__stars">★★★★★</div>
                     <p>Основано на 1 отзыве</p>
-                    <img src="img/Yandex.png" width="50" height="50" alt="Yandex logo">
+                    <img src="{% static "img/Yandex.png" %}" width="50" height="50" alt="Yandex logo">
                 </div>
             </div>
         </div>
@@ -593,7 +593,7 @@
             <h2>Актуальные Новости</h2>
             <div class="last-news__blocks">
                 <div class="last-news-block">
-                    <img src="img/news__1.png">
+                    <img src="{% static "img/news__1.png" %}">
                     <div class="last-news__whos">
                         <p>Admin</p>
                         <p>Ноябрь 22, 2025</p>
@@ -601,7 +601,7 @@
                     <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa possimus blanditiis amet dolores eaque.</h6>
                 </div>
                 <div class="last-news-block">
-                    <img src="img/news__2.png">
+                    <img src="{% static "img/news__2.png" %}">
                     <div class="last-news__whos">
                         <p>Абрам</p>
                         <p>Ноябрь 22, 2005</p>
@@ -616,10 +616,10 @@
             <div class="our-premium-brands__left">
                 <h2>Изучите Наши<br> Премиальные Марки Авто</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="our-premium-brands__a">Посмотреть наши бренды<img src="icons/arrow.png"></a>
+                <a href="#" class="our-premium-brands__a">Посмотреть наши бренды<img src="{% static "icons/arrow.png" %}"></a>
             </div>
             <div class="our-premium-brands__right">
-                <img src="img/logo-brand.png.png">
+                <img src="{% static "img/logo-brand.png.png" %}">
                 <div class="our-premium-brands__logo">
                     <p>STATUSCAR</p>
                 </div>
@@ -695,9 +695,9 @@
                 <p>statuscar@mail.com</p>
                 </div>
                 <div class="footer-social">
-                <img src="icons/icons8-instagram-30.png" alt="Instagram" loading="lazy" width="30" height="30">
-                <img src="icons/icons8-viber-30.png" alt="Viber" loading="lazy" width="30" height="30">
-                <img src="icons/icons8-телеграм-64.png" alt="Telegram" loading="lazy" width="30" height="30">
+                <img src="{% static "icons/icons8-instagram-30.png" %}" alt="Instagram" loading="lazy" width="30" height="30">
+                <img src="{% static "icons/icons8-viber-30.png" %}" alt="Viber" loading="lazy" width="30" height="30">
+                <img src="{% static "icons/icons8-телеграм-64.png" %}" alt="Telegram" loading="lazy" width="30" height="30">
                 </div>
             </div>
             </div>
@@ -706,7 +706,7 @@
     <section class="footer-small">
         <div class="footer-small-container container">
             <div class="footer-small__block">
-                <img src="icons/LetterCHexagon.png" width="20" height="20" loading="lazy" alt="">
+                <img src="{% static "icons/LetterCHexagon.png" %}" width="20" height="20" loading="lazy" alt="">
                 <p>Все права защищены.</p>
             </div>
             <div class="footer-small__block">
