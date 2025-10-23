@@ -1,0 +1,121 @@
+# Django
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+db.sqlite3
+migrations/
+!migrations/__init__.py
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+.env.example
+.secrets
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+virtualenv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Static files (если собираетесь через collectstatic)
+staticfiles/
+mediafiles/
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite3
+*.sqlite
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.coverage
+
+# Pytest
+.pytest_cache/
+.tox/
+
+# Package files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# IPython
+.ipynb_checkpoints/
+
+# PyCharm
+.ropeproject
+
+# macOS
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+ehthumbs.db
+[Tt]humbs.db
+Desktop.ini
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Complexity
+output/*.html
+output/*/index.html
+
+# Sphinx
+docs/_build/
