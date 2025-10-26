@@ -28,7 +28,7 @@ class Car(models.Model):
 class Advertisement(models.Model):
     car = models.OneToOneField(Car, on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    photo_1 = models.ImageField(upload_to='???')
+    photo_1 = models.ImageField(upload_to='cars_photos')
     photo_2 = models.ImageField(upload_to='???', blank=True, null=True)
     photo_3 = models.ImageField(upload_to='???', blank=True, null=True)
     photo_4 = models.ImageField(upload_to='???', blank=True, null=True)
@@ -38,6 +38,9 @@ class Advertisement(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Создано")
     first_name = models.CharField()
     last_name = models.CharField()
+    
+    def __str__(self):
+        return f"Объявление: {self.car.brand} {self.car.model} - {self.price} BYN"
 
 
 

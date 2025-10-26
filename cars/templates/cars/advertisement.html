@@ -1,0 +1,1889 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разместить объявление</title>
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/advertisement.css" %}">
+</head>
+<body>
+    <header class="header container">
+        <div class="header__logo">
+            <h2>STATUSWHEEL</h2>
+        </div>
+        <div class="header__close">
+            <a href="#">Закрыть</a>
+        </div>
+    </header>
+    <!-- Часть 1 -->
+    <main class="main container">
+        <div class="main-container">
+            <div class="main-container__title">
+                <p>Объявление смогут увидеть 3 000 000 человек ежедневно</p>
+            </div>
+            <p></p>
+            <input placeholder="Марка">
+            <div class="main-container__car-brands">
+                <div class="car-brand">
+                    <img src="icons/audi-logo.png">
+                    <p>Audi</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/lada_logo_icon_247877.png">
+                    <p>Lada (ВАЗ)</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/iconfinderbmwlogo4140436-115966_115915.png">
+                    <p>BMW</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/lexus_logo_icon_145808.png">
+                    <p>Lexus</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/hyundai_logo_icon_248055.png">
+                    <p>Hyundai</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/iconfindertoyotalogo4141639-115964_115917.png">
+                    <p>Toyota</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/infiniti_logo_icon_145818.png">
+                    <p>Mercedes-benz</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/renault_logo_icon_145780.png">
+                    <p>Renalut</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/ford_logo_icon_169155 (1).png">
+                    <p>Ford</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/bentley_logo_icon_168522.png">
+                    <p>Bentley</p>
+                </div>
+                <div class="car-brand">
+                    <img src="icons/porsche_logo_icon_145784.png">
+                    <p>Porsche</p>
+                </div>
+                <div class="car-brand-all-brand">
+                    <button>Другие марки</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- конец части 1 -->
+
+    <!-- Часть 2 -->
+    <div class="main-second container">
+        <div class="main-container__second">
+            <div class="main-container-second__title">
+                <p>Audi</p>
+                <img src="icons/audi-logo.png">
+            </div>
+            <div class="main-container-second__inputs">
+                <input class="second-inputs__brand" placeholder="Марка *">
+                <input placeholder="Модель *">
+            </div>
+            <div class="main-container-second__models">
+       
+                <div class="container-second-models__brief">
+                    <p>Audi 80</p>
+                    <p>Audi 100</p>
+                    <p>Audi 200</p>
+                    <p>Audi A1</p>
+                    <p>Audi A2</p>
+                    <p>Audi A3</p>
+                    <p>Audi A4</p>
+                    <p>Audi A5</p>
+                    <p>Audi A6</p>
+                    <p>Audi A7</p>
+                    <p>Audi A8</p>
+                    <p>Audi Q2</p>
+                    <p>Audi Q3</p>
+                    <p>Audi Q4 e-tron</p>
+                    <p>Audi Q5</p>
+                    <p>Audi Q6</p>
+                    <p>Audi Q7</p>
+                    <p>Audi Q8</p>
+                    <p>Audi e-tron</p>
+                    <p>Audi e-tron GT</p>
+                    <p>Audi TT</p>
+                    <p>Audi R8</p>
+                    <p>Audi RS6</p>
+                    <p>Audi TTS</p>
+                </div>
+                
+           
+                <button class="container-second__all-btn show-all">Все модели</button>
+                
+            
+                <div class="container-second-models__all">
+                    <p>Audi RS Q8</p>
+                    <p>Audi RS e-tron GT</p>
+                    <p>Audi S3</p>
+                    <p>Audi S4</p>
+                    <p>Audi S5</p>
+                    <p>Audi S6</p>
+                    <p>Audi S7</p>
+                    <p>Audi S8</p>
+                    <p>Audi SQ2</p>
+                    <p>Audi SQ5</p>
+                    <p>Audi SQ7</p>
+                    <p>Audi SQ8</p>
+                    <p>Audi TTS</p>
+                    <p>Audi TTS</p>
+                </div>
+
+                <button class="container-second__all-btn hide-all">Свернуть</button>
+            </div>
+        </div>
+    </div>
+    <!-- конец части 2 -->
+
+    <!-- начало части 3 -->
+    <div class="main-third container">
+        <div class="main-third-container">
+            <div class="main-third__title">
+                <h3>Audi A8 D4</h3>
+                <img src="icons/audi-logo.png">
+            </div>
+            <div class="main-third__inputs">
+                <input>
+                <input>
+            </div>
+            <h4>Характеристики</h4>
+            <div class="divider"></div>
+            <p>Год выпуска</p>
+            <div class="main-third__years">
+                <div class="main-third-new__years">
+                    <div class="main-third-new__year">
+                        <p>2025</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2024</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2023</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2022</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2021</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2020</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2019</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2018</p>
+                    </div><div class="main-third-new__year">
+                        <p>2017</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2016</p>
+                    </div>
+                    <div class="main-third-new__year">
+                        <p>2015</p>
+                    </div>
+                    <div class="main-third-new__button">
+                        <button>Старше</button>
+                    </div>
+                </div>
+                <div class="main-third-old__years">
+                    <div class="main-third-old__year">
+                        <p>2014</p>
+                    </div>
+                    <div class="main-third-old__year">
+                        <p>2013</p>
+                    </div>
+                    <div class="main-third-old__year">
+                        <p>2012</p>
+                    </div>
+                    <div class="main-third-old__year">
+                        <p>2011</p>
+                    </div>
+                    <div class="main-third-old__year">
+                        <p>2010</p>
+                    </div>
+                    <div class="main-third-old__button">
+                        <button>Свернуть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- конец 3 части -->
+
+    <div class="main-fourth container">
+        <div class="main-fourth-container">
+            <div class="main-fourth__title">
+                <h4>Audi A8</h4>
+                <img src="icons/audi-logo.png" alt="Audi Logo">
+            </div>
+            <div class="main-fourth__description">
+                <p>2018</p>
+            </div>
+            <div class="main-fourth__inputs">
+                <input type="text" placeholder="Поле 1">
+                <input type="text" placeholder="Поле 2">
+            </div>
+            <h3>Характеристики</h3>
+            <div class="divider"></div>
+            
+            <div class="main-fourth-year-of-release">
+                <div class="text-content">
+                    <h6>Год выпуска</h6>
+                    <p class="main-fourth-year-of-release-show-modal__btn">2018</p>
+                </div>
+                <div class="main-fourth-year-of-release__modal">
+                    <div class="year-of-release-modal__brief">
+                        <div class="release-div">2025</div>
+                        <div class="release-div">2024</div>
+                        <div class="release-div">2023</div>
+                        <div class="release-div">2022</div>
+                        <div class="release-div">2021</div>
+                        <div class="release-div">2020</div>
+                        <div class="release-div">2019</div>
+                        <div class="release-div">2018</div>
+                        <div class="release-div">2017</div>
+                        <div class="release-div">2016</div>
+                        <div class="release-div">2015</div>
+                        <button class="year-of-release-modal-brief__btn">Старше</button>
+                    </div>
+                    <div class="year-of-release-modal__all">
+                        <div class="release-div">2025</div>
+                        <div class="release-div">2024</div>
+                        <div class="release-div">2023</div>
+                        <div class="release-div">2022</div>
+                        <div class="release-div">2021</div>
+                        <div class="release-div">2020</div>
+                        <div class="release-div">2019</div>
+                        <div class="release-div">2018</div>
+                        <div class="release-div">2017</div>
+                        <div class="release-div">2016</div>
+                        <div class="release-div">2015</div>
+                        <div class="release-div">2014</div>
+                        <div class="release-div">2013</div>
+                        <div class="release-div">2012</div>
+                        <div class="release-div">2011</div>
+                        <div class="release-div">2010</div>
+                        <div class="release-div">2009</div>
+                        <div class="release-div">2008</div>
+                        <div class="release-div">2007</div>
+                        <div class="release-div">2006</div>
+                        <div class="release-div">2005</div>
+                        <div class="release-div">2004</div>
+                        <div class="release-div">2003</div>
+                        <div class="release-div">2002</div>
+                        <div class="release-div">2001</div>
+                        <div class="release-div">2000</div>
+                        <button class="year-of-release-modal-all__btn">Свернуть</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main-fourth-car-body">
+                <div class="text-content body-selector">
+                    <h6>Кузов</h6>
+                    <p></p>
+                </div>
+                <div class="main-fourth-car-body__modal">
+                    <div class="main-fourth-car-body-modal__check"></div>
+                    <div class="main-fourth-car-body-modal__block" data-body="Седан">
+                        <img src="icons/Седан.jpg">
+                    </div>
+                    <div class="main-fourth-car-body-modal__block" data-body="Универсал">
+                        <img src="icons/Универсал.jpg">
+                    </div>
+                    <div class="main-fourth-car-body-modal__block" data-body="Кабриолет">
+                        <img src="icons/Кабриолет.jpg">
+                    </div>
+                    <div class="main-fourth-car-body-modal__block" data-body="Хэтчбек">
+                        <img src="icons/Хэтчбек.jpg">
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main-fourth-car-generation">
+                <div class="text-content generation-selector">
+                    <h6>Поколение</h6>
+                    <p></p>
+                </div>
+                <div class="main-fourth-car-generation__modal">
+                    <div class="main-fourth-car-generation-modal__check">
+
+                    </div>
+                    <div class="main-fourth-car-genertaion-modal__block" data-generation="c8">
+                        <div class="generation-block__inform">
+                            <h6>Audi A6 2018, седан, 5 поколение, C8 (03.2018 - 12.2022)</h6>
+                        </div>
+                        <div class="generation-block__img">
+                            <img src="icons/a6-c8.jpg">
+                        </div>
+
+                    </div>
+                     <div class="main-fourth-car-genertaion-modal__block"  data-generation="c7">
+                        <div class="generation-block__inform">
+                            <h6>Audi A6 рестайлинг 2014, седан, 4 поколение, C7 (10.2014 - 10.2018)</h6>
+                        </div>
+                        <div class="generation-block__img">
+                            <img src="icons/a6 c7jpg.jpg">
+                        </div>
+
+                    </div>
+                     <div class="main-fourth-car-genertaion-modal__block"  data-generation="c6">
+                        <div class="generation-block__inform">
+                            <h6>Audi A6 2004, седан, 3 поколение, C6 (02.2004 - 08.2008)</h6>
+                        </div>
+                        <div class="generation-block__img">
+                            <img src="icons/audi-a6-c6.jpg">
+                        </div>
+
+                    </div>
+                     <div class="main-fourth-car-genertaion-modal__block"  data-generation="c5">
+                        <div class="generation-block__inform">
+                            <h6>Audi A6 1997, седан, 2 поколение, С5 (02.1997 - 04.2001)</h6>
+                        </div>
+                        <div class="generation-block__img">
+                            <img src="icons/a6 c5.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main-fourth-type-of-engine">
+                <div class="text-content type-of-engine-selector">
+                    <h6>Двигатель</h6>
+                    <p></p>
+                </div>
+                <div class="main-fourth-type-of-engine__modal">
+                    <div class="main-fourth-type-of-engine__block">
+                        <img src="icons/Бензин.png">
+                        <h6>Бензин</h6>
+                    </div>
+                    <div class="main-fourth-type-of-engine__block">
+                        <img src="icons/Дизель.png">
+                        <h6>Дизель</h6>
+                    </div>
+                    <div class="main-fourth-type-of-engine__block">
+                        <img src="icons/Гибрид.png">
+                        <h6>Гибрид</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="car-inspection-wrapper">
+        <form name="mainForm">
+            <div class="main-fifth__parts">
+                <div class="main-fifth container">
+                    <div class="main-fifth-container">
+                        <div class="main-fifth__title">
+                            <div class="main-fifth-title__left">
+                                <h1></h1>
+                                <div class="fifth-title-left__additional">
+                                    <p class="first-text"></p>
+                                    <p class="second-text"></p>
+                                </div>
+                            </div>
+                            <div class="main-fifth-title__right">
+                                <img src="icons/audi-svg-icon.png">
+                            </div>
+                        </div>
+                        <div class="main-fifth__inputs">
+                            <div class="input-wrapper">
+                                <input placeholder="Марка">
+                            </div>
+                            <div class="input-wrapper">
+                                <input placeholder="Модель">
+                            </div>
+                        </div>
+                        <div class="main-fifth__text">
+                            <h2>Характеристики</h2>
+                            <button class="main-fifth-text__back-btn">Назад<img src="icons/icons8-стрелка-назад-30.png"></button>
+                        </div>
+                        <div class="main-fifth__drive">
+                            <div class="main-fifth-drive__text">
+                                <h5>Привод</h5>
+                                <p></p>
+                            </div>
+                            <div class="main-fifth-drive__modal">
+                                <div class="main-fifth-drive-modal__block">
+                                    <img src="icons/Задний.png">
+                                    <p>Задний</p>
+                                </div>
+                                <div class="main-fifth-drive-modal__block">
+                                    <img src="icons/Передний.png">
+                                    <p>Передний</p>
+                                </div>
+                                <div class="main-fifth-drive-modal__block">
+                                    <img src="icons/Полный.png">
+                                    <p>Полный</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-fifth__transmission">
+                            <div class="main-fifth-transmission__text">
+                                <h5>Коробка передач</h5>
+                                <p></p>
+                            </div>
+                            <div class="main-fifth-transmission__modal">
+                                <div class="main-fifth-transmission-modal__block">
+                                    <img src="icons/автомат.png">
+                                    <p>Автомат</p>
+                                </div>
+                                <div class="main-fifth-transmission-modal__block">
+                                    <img src="icons/механика.png">
+                                    <p>Механика</p>
+                                </div>
+                                <div class="main-fifth-transmission-modal__block">
+                                    <img src="icons/робот.png">
+                                    <p>Робот</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-fifth__config">
+                            <div class="main-fifth-config__text">
+                                <h5>Конфигурация</h5>
+                                <p></p>
+                            </div>
+                            <div class="main-fifth-config__modal">
+                                <div class="main-fifth-config-modal__block">
+                                    <div class="config-check"></div>
+                                    <p>140 л.с. (2.0d ATM)</p>
+                                </div>
+                                <div class="main-fifth-config-modal__block">
+                                    <div class="config-check"></div>
+                                    <p>190 л.с. (2.5d ATM)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-fifth__color">
+                            <div class="main-fifth-color__text">
+                                <h5>Цвет</h5>
+                                <p></p>
+                            </div>
+                            <div class="main-fifth-color__modal">
+                                <div class="main-fifth-color-modal__list">
+                                    <div class="main-fifth-color-modal__block" data-color="red" data-colorrus="красный"></div>
+                                    <div class="main-fifth-color-modal__block" data-color="yellow" data-colorrus="желтый"></div>
+                                    <div class="main-fifth-color-modal__block" data-color="green" data-colorrus="зеленый"></div>
+                                    <div class="main-fifth-color-modal__block" data-color="orange" data-colorrus="оранжевый"></div>
+                                    <div class="main-fifth-color-modal__block" data-color="black" data-colorrus="черный"></div>
+                                    <div class="main-fifth-color-modal__block" data-color="gray" data-colorrus="серый"></div>
+                                    <div class="main-fifth-color-modal__block" data-color="white" data-colorrus="белый"></div>
+                                    <div class="main-fifth-color-modal__block" data-color="blue" data-colorrus="синий"></div>
+                                    <div class="main-fifth-color-modal__block" data-color="pink" data-colorrus="розовый"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-fifth__available">
+                            <div class="main-fifth-available__text">
+                                <h5>Наличие</h5>
+                                <p></p>
+                            </div>
+                            <div class="main-fifth-available__modal">
+                                <div class="main-fifth-available-modal__block">
+                                    <p>В наличии</p>
+                                </div>
+                                <div class="main-fifth-available-modal__block">
+                                    <p>Под заказ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="main-fifth__mileage">
+                    <h2>Пробег</h2>
+                    <label for="mileage"></label>
+                    <div class="input-wrapper__mileage">
+                        <input id="mileage" placeholder="км" type="number" required name="mileage">
+                    </div>
+                </div>
+
+                <div class="main-fifth__photo">
+                    <div class="main-fifth-photo__text">
+                        <h2>Фото</h2>
+                        <div class="main-fifth-photo-text__block">
+                            <p>+ 70% к просмотрам</p>
+                        </div>
+                    </div>
+                    <div class="main-fifth-photo__description">
+                        <p>Госномер должен быть хорошо виден — он поможет проверить объявление. 
+                        В поиске мы скроем его от пользователей. Также, не показывайте на фото контакты, 
+                        надписи, людей, водяные знаки и посторонние предметы.</p>
+                    </div>
+                    <div class="photo-upload">
+                        <input type="file" id="car-photo" accept="image/*" name="photo" required multiple>
+                        <p class="photo-upload__text">Выберите или перетащите фото</p>
+                    </div>
+                    <div class="photo-after">
+                        <div class="photo-after__left">
+                            <label for="photo-after-adv"></label>
+                            <input type="checkbox" id="photo-after-adv">
+                        </div>
+                        <div class="photo-after__right">
+                            <p>Загрузить позже</p>
+                            <p>После размещения мы пришлем вам сообщение на почту с ссылкой на загрузку фотографий</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-fifth__car">
+                    <div class="main-fifth-car__text">
+                        <h2>Повреждения</h2>
+                        <p>Отметьте на схеме окрашенные детали и повреждения</p>
+                    </div>
+                    <div class="main-fifth-car__img">
+                        <div class="fifth-car-img__block" data-part="Задний-бампер"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Крышка-багажника"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Заднее-правое-крыло"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Задняя-правая-дверь"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Передняя-правая-дверь"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Правое-зеркало"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Переднее-правое-крыло"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Крыша"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Лобовое-стекло"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Капот"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Передний-бампер"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Заднее-левое-крыло"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Задняя-левая-дверь"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Передняя-левая-дверь"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Левое-зеркало"><p>+</p></div>
+                        <div class="fifth-car-img__block" data-part="Переднее-левое-крыло"><p>+</p></div>
+                    </div>
+                </div>
+                <div class="main-fifth__contacts">
+                    <div class="main-fifth-contacts__text">
+                        <h2>Контакты</h2>
+                    </div>
+                    <div class="main-fifth-contacts__name">
+                        <input type="text" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="main-fifth-contacts__mail">
+                        <input type="email" autocomplete="email" required>
+                    </div>
+                    <div class="main-fifth-contacts__number-clock">
+                        <div class="main-fifth-number-clock__left">
+                            <input type="tel" name="phone" autocomplete="tel" required>
+                        </div>
+                        <div class="main-fifth-number-clock__right">
+                            <div class="number-clock-right__from">
+                                <input readonly>
+                                <div class="number-clock-right-from__modal">
+                                    <div class="number-clock-right-from__block"><p>с 0:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 1:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 2:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 3:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 4:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 5:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 6:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 7:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 8:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 9:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 10:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 11:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 12:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 13:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 14:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 15:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 16:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 17:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 18:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 19:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 20:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 21:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 22:00</p></div>
+                                    <div class="number-clock-right-from__block"><p>с 23:00</p></div>
+                                </div>
+                            </div>
+                            <div class="number-clock-right__to">
+                                <input readonly>
+                                <div class="number-clock-right-to__modal">
+                                    <div class="number-clock-right-to__block"><p>до 0:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 1:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 2:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 3:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 4:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 5:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 6:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 7:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 8:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 9:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 10:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 11:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 12:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 13:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 14:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 15:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 16:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 17:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 18:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 19:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 20:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 21:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 22:00</p></div>
+                                    <div class="number-clock-right-to__block"><p>до 23:00</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-fifth-contacts__communication-method">
+                        <div class="main-fifth-contacts__communication-method__text">
+                            <h4>Способ связи</h4>
+                        </div>
+                        <div class="main-fifth-contacts__communication-method__buttons">
+                            <div class="main-fifth-contacts__communication-method-buttons__button">
+                                <button>Любой способ</button>
+                            </div>
+                            <div class="main-fifth-contacts__communication-method-buttons__button">
+                                <button>Только в чате</button>
+                            </div>
+                            <div class="main-fifth-contacts__communication-method-buttons__button">
+                                <button>Только по телефону</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-fifth__place-of-inspection">
+                    <div class="main-fifth-place-of-inspection__text">
+                        <h2>Место осмотра</h2>
+                    </div>
+                    <div class="main-fifth-place-of-inspection__city">
+                        <input type="text" name="city" autocomplete="address-level2" required>
+                    </div>
+                    <div class="main-fifth-place-of-inspection__street">
+                        <input type="text" name="street" autocomplete="street-address" required>
+                    </div>
+                    <div class="main-fifth-place-of-inspection__map">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A33ac79e35e77badbc088f4ad24559105e2afed1e8b6f076ee91c0446279b668f&amp;source=constructor" width="660" height="250" frameborder="0"></iframe>
+                    </div>
+                    <div class="main-fifth-place-of-inspection__online-show">
+                        <input type="checkbox">
+                        <label>Онлайн показ</label>
+                    </div>
+                </div>
+                <div class="main-fifth__price">
+                    <div class="main-fifth-price__text">
+                        <h2>Цена</h2>
+                    </div>
+                    <div class="main-fifth-price__input">
+                        <input type="number" required name="price">
+                        <div class="main-fifth-price-input__elements" data-default="br BYN">
+                            <span class="main-fifth-price-input__currency">BYN</span>
+                            <span class="main-fifth-price-input__arrow"></span>
+                            <div class="main-fifth-price-input__modal">
+                                <div class="currency-option" data-currency="BYN">br BYN</div>
+                                <div class="currency-option" data-currency="USD">$ USD</div>
+                                <div class="currency-option" data-currency="EUR">€ EUR</div>
+                                <div class="currency-option" data-currency="RUB">₽ RUB</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-fifth-price__additional">
+                        <input type="checkbox">
+                        <label>Возможен обмен</label>
+                    </div>
+                </div>
+
+                <div class="main-fifth__selection-by-status">
+                    <div class="main-fifth-selection-by-status__title">
+                        <h5>Тест для формирования клиентской базы данных</h5>
+                        <p>Заполните анкету, чтобы мы смогли получить полное представление о вашем социальном статусе</p>
+                    </div>
+                    <div class="main-fifth-selection-by-status__body">
+
+                    </div>
+                    <div class="main-fifth-selection-by-status__button">
+                        <button>Заполнить</button>
+                    </div>
+                </div>
+                <div class="main-fifth__promotion">
+                    <div class="main-fifth-promotion__top">
+                        <div class="main-fifth-promotion__text">
+                            <h2>Последний шаг: ускорьте продажу</h2>
+                            <p>Всё готово! Теперь можно выбрать способ продвижения: объявление станет заметнее и покупатель найдётся быстрее</p>
+                        </div>
+                        <div class="main-fifth-promotion__options">
+                            <div class="main-fifth-promotion-options__block" data-option="Турбо">
+                                <div class="options-block__title">
+                                    <h5>Турбо</h5>
+                                    <img src="icons/icons8-удар-молнии-50 (1).png">
+                                </div>
+                                <p class="block-p">Выделим цену на 3 дня</p>
+                                <div class="options-block__divs">
+                                    <div class="options-block__div">
+                                        <p>Выделим цену</p>
+                                        <img src="icons/icons8-галочка-24.png">
+                                    </div>
+                                    <div class="options-block__div">
+                                        <p>Покажем в похожих объявлениях</p>
+                                        <img src="icons/icons8-галочка-24.png">
+                                    </div>
+                                    <div class="options-block__div">
+                                        <p>Закрепим в начале поисковой выдачи</p>
+                                        <img src="icons/icons8-галочка-24.png">
+                                    </div>
+                                    <div class="options-block__div options-block__div-no">
+                                        <p>Будем поднимать каждый день</p>
+                                        <img src="icons/icons8-крест-48.png">
+                                    </div>
+                                </div>
+                                <div class="options-block__price">
+                                    <p>64 BYN</p>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            
+
+                            
+
+                            <div class="main-fifth-promotion-options__block" data-option="Экспресс">
+                                <div class="options-block__title">
+                                    <h5>Экспресс</h5>
+                                    <img src="icons/icons8-таймер-64.png">
+                                </div>
+                                <p class="block-p">Действует 6 дней</p>
+                                <div class="options-block__divs">
+                                    <div class="options-block__div">
+                                        <p>Выделим цену</p>
+                                        <img src="icons/icons8-галочка-24.png">
+                                    </div>
+                                    <div class="options-block__div">
+                                        <p>Покажем в похожих объявлениях</p>
+                                        <img src="icons/icons8-галочка-24.png">
+                                    </div>
+                                    <div class="options-block__div options-block__div-no">
+                                        <p>Закрепим в начале поисковой выдачи</p>
+                                        <img src="icons/icons8-крест-48.png">
+                                    </div>
+                                    <div class="options-block__div options-block__div-no">
+                                        <p>Будем поднимать каждый день</p>
+                                        <img src="icons/icons8-крест-48.png">
+                                    </div>
+                                </div>
+                                <div class="options-block__price">
+                                    <p>47 BYN</p>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+
+                            <div class="main-fifth-promotion-options__block" data-option="По отдельности">
+                                <div class="options-block__title">
+                                    <h5>Опции</h5>
+                                    <img src="icons/icons8-головоломка-50.png">
+                                </div>
+                                <p class="block-p">По отдельности</p>
+                                <div class="options-block__divs">
+                                    <div class="options-block__div">
+                                        <p>Комбинируйте опции по своему вкусу</p>
+                                    </div>
+                                </div>
+                                <div class="options-block__price options-block__price-individually">
+                                    <p>от 8 BYN</p>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-fifth-promotion-options-block__modal">
+                            <div class="main-fifth-promotion-options-block-modal__block">
+                                <div class="options-block-modal-block__left">
+                                    <input type="checkbox">
+                                    <label>Выделение цветом на 3 дня</label>
+                                </div>
+                                <div class="options-block-modal-block__right">
+                                    <p>8 BYN</p>
+                                </div>
+                            </div>
+                            <div class="divider-modal"></div>
+                            <div class="main-fifth-promotion-options-block-modal__block">
+                                <div class="options-block-modal-block__left">
+                                    <input type="checkbox" id="zombie">
+                                    <label for="zombie">Спецпредложение на 3 дня</label>
+                                </div>
+                                <div class="options-block-modal-block__right">
+                                    <p>37 BYN</p>
+                                </div>
+                            </div>
+                            <div class="divider-modal"></div>
+                            <div class="main-fifth-promotion-options-block-modal__block">
+                                <div class="options-block-modal-block__left">
+                                    <input type="checkbox">
+                                    <label>Поднятие в ТОП на 3 дня</label>
+                                </div>
+                                <div class="options-block-modal-block__right">
+                                    <p>56 BYN</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-fifth-promotion__without-options">
+                            <p>Разместить без опций</p>
+                            <div class="main-fifth-promotion-without-options__block">
+                                <label>0 BYN</label>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                        <div class="main-fifth-promotion__final">
+                            <div class="main-fifth-promotion-final__title">
+                                <div class="promotion-final-title__img">
+                                    <img src="icons/icons8-передняя-часть-автомобиля-48.png">
+                                </div>
+                                <div class="promotion-final-title__about">
+                                    <h5></h5>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="main-fifth-promotion__statistic">
+                                <div class="promotion-statistic__block">
+                                    <p>Просмотры</p>
+                                    <div class="promotion-statistic-block__line">
+                                        <div class="promotion-statistic-block__line-progress"></div>
+                                    </div>
+                                </div>
+                                <div class="promotion-statistic__block">
+                                    <p>Избранное</p>
+                                    <div class="promotion-statistic-block__line">
+                                        <div class="promotion-statistic-block__line-progress"></div>
+                                    </div>
+                                </div>
+                                <div class="promotion-statistic__block">
+                                    <p>Звонки</p>
+                                    <div class="promotion-statistic-block__line">
+                                        <div class="promotion-statistic-block__line-progress"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-fifth-promotion__divider"></div>
+                            <div class="main-fifth-promotion__total">
+                                <div class="main-fifth-promotion-total__block">
+                                    <p class="main-fifth-promotion-total__label">Размещение на 30 дней</p>
+                                    <span class="main-fifth-promotion-total__filler"></span>
+                                    <p class="main-fifth-promotion-total__value">Бесплатно</p>
+                                </div>
+                            </div>
+                                <div class="main-fifth-promotion__button">
+                                    <button type="submit">Опубликовать за</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <div class="main-fifth-selection-by-status__modal">
+            <div class="main-fifth-selection-by-status-modal__left">
+                <button class="main-fifth-selection-by-status-modal__close-btn">×</button>
+                <div class="main-fifth-selection-by-status-modal-left__content">
+                    <h2>Социальный профиль продавца</h2>
+                    <p>Заполните данные для формирования базы автопредпочтений</p>
+                    <div class="main-fifth-selection-by-status-modal-left__progress">
+                        <div class="main-fifth-selection-by-status-modal-left-progress__bar">
+                            <div class="main-fifth-selection-by-status-modal-left-progress-bar__fill" style="width: 25%"></div>
+                        </div>
+                        <span>👤 Личные данные</span>
+                    </div>
+                    <div class="main-fifth-selection-by-status-modal-left__button">
+                        <button class="main-fifth-selection-by-status-modal-left__button-button">Закончить анкетирование</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main-fifth-selection-by-status-modal__right">
+                <form  id="statusForm">
+                    <div class="main-fifth-selection-by-status-modal-right__topic">
+                        <h2>👤 Личные данные</h2>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Возраст</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <input type="number" placeholder="Укажите возраст" class="main-fifth-selection-by-status-modal-right-block-elems__input">
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Пол</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="gender" value="male">
+                                <span>Мужской</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="gender" value="female">
+                                <span>Женский</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Регион проживания</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите регион</option>
+                                <option value="moscow">Москва и область</option>
+                                <option value="spb">Санкт-Петербург и область</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Город</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <input type="text" placeholder="Укажите город" class="main-fifth-selection-by-status-modal-right-block-elems__input">
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Семейное положение</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите статус</option>
+                                <option value="single">Холост/Не замужем</option>
+                                <option value="married">Женат/Замужем</option>
+                                <option value="divorced">Разведен(а)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Наличие детей</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="children" value="yes">
+                                <span>Есть дети</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="children" value="no">
+                                <span>Нет детей</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Уровень образования</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите образование</option>
+                                <option value="school">Среднее</option>
+                                <option value="college">Среднее специальное</option>
+                                <option value="bachelor">Высшее (бакалавр)</option>
+                                <option value="master">Высшее (магистр)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Степень мобильности</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="mobility" value="low">
+                                <span>Редко переезжаю</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="mobility" value="medium">
+                                <span>Иногда командировки</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="mobility" value="high">
+                                <span>Часто переезжаю/командировки</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 💼 Профессиональный статус -->
+                    <div class="main-fifth-selection-by-status-modal-right__topic">
+                        <h2>💼 Профессиональный статус</h2>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Сфера деятельности</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите сферу</option>
+                                <option value="it">IT/Технологии</option>
+                                <option value="finance">Финансы/Банки</option>
+                                <option value="medicine">Медицина</option>
+                                <option value="education">Образование</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Должность</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <input type="text" placeholder="Укажите должность" class="main-fifth-selection-by-status-modal-right-block-elems__input">
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Формат занятости</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="work_format" value="office">
+                                <span>Офис</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="work_format" value="remote">
+                                <span>Удалёнка</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="work_format" value="hybrid">
+                                <span>Гибрид</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Тип организации</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите тип</option>
+                                <option value="state">Госструктура</option>
+                                <option value="private">Частная компания</option>
+                                <option value="entrepreneur">ИП</option>
+                                <option value="self_employed">Самозанятый</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Размер компании</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите размер</option>
+                                <option value="small">до 10 чел</option>
+                                <option value="medium">10–50 чел</option>
+                                <option value="large">50–200 чел</option>
+                                <option value="xlarge">200+ чел</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Стаж работы</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <input type="number" placeholder="Лет в профессии" class="main-fifth-selection-by-status-modal-right-block-elems__input">
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Уровень дохода</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите уровень</option>
+                                <option value="low">до 50 тыс.</option>
+                                <option value="medium">50-100 тыс.</option>
+                                <option value="high">100-200 тыс.</option>
+                                <option value="vip">200+ тыс.</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Дополнительный доход</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="extra_income" value="yes">
+                                <span>Есть (фриланс, инвестиции)</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="extra_income" value="no">
+                                <span>Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 🚗 Автомобильный профиль -->
+                    <div class="main-fifth-selection-by-status-modal-right__topic">
+                        <h2>🚗 Автомобильный профиль</h2>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Тип использования авто</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="car_usage" value="work">
+                                <span>Работа</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="car_usage" value="family">
+                                <span>Семья</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="car_usage" value="image">
+                                <span>Имидж</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="car_usage" value="hobby">
+                                <span>Хобби</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Частота вождения</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите частоту</option>
+                                <option value="daily">Ежедневно</option>
+                                <option value="often">Несколько раз в неделю</option>
+                                <option value="rarely">Редко</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Предпочтительный тип кузова</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите кузов</option>
+                                <option value="sedan">Седан</option>
+                                <option value="hatchback">Хэтчбек</option>
+                                <option value="suv">Внедорожник</option>
+                                <option value="coupe">Купе</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Любимые марки авто</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <input type="text" placeholder="Например: BMW, Mercedes, Audi" class="main-fifth-selection-by-status-modal-right-block-elems__input">
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Предпочтения по типу топлива</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="fuel" value="petrol">
+                                <span>Бензин</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="fuel" value="diesel">
+                                <span>Дизель</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="fuel" value="hybrid">
+                                <span>Гибрид</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="fuel" value="electric">
+                                <span>Электрика</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Ориентир при выборе авто</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Что важно при выборе?</option>
+                                <option value="status">Статус</option>
+                                <option value="comfort">Комфорт</option>
+                                <option value="economy">Экономичность</option>
+                                <option value="reliability">Надёжность</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Готовность к покупке нового авто</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="new_car" value="ready">
+                                <span>Готов к покупке</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="new_car" value="considering">
+                                <span>Рассматриваю</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="new_car" value="not_ready">
+                                <span>Не готов</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Бюджет на авто</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <input type="text" placeholder="Укажите бюджет в рублях" class="main-fifth-selection-by-status-modal-right-block-elems__input">
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Наличие второго автомобиля</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="second_car" value="yes">
+                                <span>Есть второй автомобиль</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="second_car" value="no">
+                                <span>Нет второго автомобиля</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Состояние текущего авто</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <select class="main-fifth-selection-by-status-modal-right-block-elems__select">
+                                <option value="">Выберите состояние</option>
+                                <option value="new">Новый</option>
+                                <option value="used">Б/у</option>
+                                <option value="needs_repair">Требует ремонта</option>
+                                <option value="no_car">Нет автомобиля</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 🧠 Поведенческие и ценностные параметры -->
+                    <div class="main-fifth-selection-by-status-modal-right__topic">
+                        <h2>🧠 Поведенческие и ценностные параметры</h2>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Стиль жизни</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="lifestyle" value="active">
+                                <span>Активный</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="lifestyle" value="home">
+                                <span>Домашний</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="lifestyle" value="urban">
+                                <span>Городской</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="lifestyle" value="country">
+                                <span>Загородный</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Приоритеты при покупке</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="priorities" value="appearance">
+                                <span>Внешний вид</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="priorities" value="brand">
+                                <span>Бренд</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="priorities" value="safety">
+                                <span>Безопасность</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="priorities" value="technology">
+                                <span>Технологии</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Отношение к авто как к статусному элементу</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="status_car" value="important">
+                                <span>Важно для статуса</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="status_car" value="not_important">
+                                <span>Не важно для статуса</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__radio">
+                                <input type="radio" name="status_car" value="neutral">
+                                <span>Нейтрально</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__block">
+                        <div class="main-fifth-selection-by-status-modal-right-block__title">
+                            <h5>Готовность делиться опытом</h5>
+                        </div>
+                        <div class="main-fifth-selection-by-status-modal-right-block__elems">
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="share_experience" value="surveys">
+                                <span>Участие в опросах</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="share_experience" value="reviews">
+                                <span>Отзывы</span>
+                            </label>
+                            <label class="main-fifth-selection-by-status-modal-right-block-elems__checkbox">
+                                <input type="checkbox" name="share_experience" value="analytics">
+                                <span>Аналитика</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-fifth-selection-by-status-modal-right__navigation">
+                        <!-- <button class="main-fifth-selection-by-status-modal-right-navigation__btn main-fifth-selection-by-status-modal-right-navigation__btn--submit">
+                            Сохранить профиль
+                        </button> -->
+                    </div>
+                </form>
+                <!-- 👤 Личные данные -->
+            </div>
+        </div>
+
+        <div class="car-parts__modal">
+            <div class="car-parts-modal__text" data-type="text">
+                <h2></h2>
+            </div>
+
+            <div class="car-parts-modal__block" data-type="color">
+                <input type="checkbox">
+                <label>Окрашено</label>
+            </div>  
+
+            <div class="car-parts-modal__block" data-type="scratch">
+                <input type="checkbox">
+                <label>Царапина/Скол</label>
+            </div>
+
+            <div class="car-parts-modal__block" data-type="dent">
+                <input type="checkbox">
+                <label>Вмятина</label>
+            </div>
+
+            <div class="car-parts-modal__block" data-type="corrosion">
+                <input type="checkbox">
+                <label>Коррозия</label>
+            </div>
+
+            <div class="car-parts-modal__comment" data-type="comment">
+                <input placeholder="Комментарий">
+            </div>
+
+            <div class="car-parts-modal__save" data-type="button">
+                <button>Сохранить</button>
+            </div>
+
+            <div class="car-parts-modal__close" data-type="close">
+                <p>Удалить</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="main-fifth-photo-text__block__explanation">
+        <p>Объявления без фотографий просматривают на 70% меньше людей, 
+            а продажа может длиться в 3 раза дольше. 
+            Загрузите фото сейчас, либо после размещения.</p>
+    </div>
+        
+    <div class="main-fifth-color-modal__description"><p></p></div>
+    
+    <!-- <footer class="footer">
+        <div class="footer-top container">
+            <div class="footer-top__left">
+                <a href="#">Пользовательское соглашение</a>
+                <a href="#">Правила рекомендаций</a>
+            </div>
+            <div class="footer-top__right">
+                
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <div class="footer-bottom__left">
+
+            </div>
+            <div class="footer-bottom__right">
+
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- модальное окно часть 1 -->
+<div class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal">
+            <div class="car-brands-grid">
+                <p>Abarth</p>
+                <p>AC</p>
+                <p>Acura</p>
+                <p>Adam</p>
+                <p>Adler</p>
+                <p>Aito</p>
+                <p>Aiways</p>
+                <p>Aixam</p>
+                <p>Alfa Romeo</p>
+                <p>Alpina</p>
+                <p>Alpine</p>
+                <p>AM General</p>
+                <p>Ambertruck</p>
+                <p>AMC</p>
+                <p>Apal</p>
+                <p>Arcfox</p>
+                <p>Ariel</p>
+                <p>Aro</p>
+                <p>Asia</p>
+                <p>Aston Martin</p>
+                <p>Auburn</p>
+                <p>Audi</p>
+                <p>Aurus</p>
+                <p>Austin</p>
+                <p>Austin Healey</p>
+                <p>Auto Union</p>
+                <p>Autobianchi</p>
+                <p>Avatr</p>
+                <p>BAIC</p>
+                <p>Bajaj</p>
+                <p>Baltijas Dzips</p>
+                <p>Baojun</p>
+                <p>BAW</p>
+                <p>Belgee</p>
+                <p>Bentley</p>
+                <p>Bertone</p>
+                <p>Bestune</p>
+                <p>Bilenkin</p>
+                <p>Bio Auto</p>
+                <p>Bitter</p>
+                <p>Blaval</p>
+                <p>BMW</p>
+                <p>Borgward</p>
+                <p>Brabus</p>
+                <p>Brilliance</p>
+                <p>Bristol</p>
+                <p>Bufori</p>
+                <p>Bugatti</p>
+                <p>Buick</p>
+                <p>BYD</p>
+                <p>Byvin</p>
+                <p>Cadillac</p>
+                <p>Callaway</p>
+                <p>Carbodies</p>
+                <p>Caterham</p>
+                <p>Chana</p>
+                <p>Changan</p>
+                <p>Changfeng</p>
+                <p>Changhe</p>
+                <p>Chery</p>
+                <p>Chevrolet</p>
+                <p>Chrysler</p>
+                <p>Ciimo (Dongfeng-Honda)</p>
+                <p>Citroen</p>
+                <p>Cizeta</p>
+                <p>Coda</p>
+                <p>Coggiola</p>
+                <p>Cord</p>
+                <p>Cowin</p>
+                <p>Cupra</p>
+                <p>Dacia</p>
+                <p>Dadi</p>
+                <p>Daewoo</p>
+                <p>Daihatsu</p>
+                <p>Daimler</p>
+                <p>Dallara</p>
+                <p>Datsun</p>
+                <p>Dayun</p>
+                <p>De Tomaso</p>
+                <p>Deco Rides</p>
+                <p>Delage</p>
+                <p>DeLorean</p>
+                <p>Denza</p>
+                <p>Derways</p>
+                <p>DeSoto</p>
+                <p>DKW</p>
+                <p>Dodge</p>
+                <p>Dongfeng</p>
+                <p>Doninvest</p>
+                <p>Donkervoort</p>
+                <p>DR</p>
+                <p>DS</p>
+                <p>DW Hower</p>
+                <p>E-Car</p>
+                <p>Eagle</p>
+                <p>Eagle Cars</p>
+                <p>Enovate (Enoreve)</p>
+                <p>Eonyx</p>
+                <p>Everus</p>
+                <p>Evolute</p>
+                <p>Excalibur</p>
+                <p>Exeed</p>
+                <p>Facel Vega</p>
+                <p>FAW</p>
+                <p>Ferrari</p>
+                <p>Fiat</p>
+                <p>Fisker</p>
+                <p>Flanker</p>
+                <p>Ford</p>
+                <p>Forthing</p>
+                <p>Foton</p>
+                <p>Franklin</p>
+                <p>FSO</p>
+                <p>FSR</p>
+                <p>Fuqi</p>
+                <p>GAC</p>
+                <p>GAC Aion</p>
+                <p>GAC Trumpchi</p>
+                <p>Geely</p>
+                <p>Genesis</p>
+                <p>Geo</p>
+                <p>GMA</p>
+                <p>GMC</p>
+                <p>Goggomobil</p>
+                <p>Gonow</p>
+                <p>Gordon</p>
+                <p>GP</p>
+                <p>Great Wall</p>
+                <p>Hafei</p>
+                <p>Haima</p>
+                <p>Hanomag</p>
+                <p>Hanteng</p>
+                <p>Haval</p>
+                <p>Hawtai</p>
+                <p>Hedmos</p>
+                <p>Heinkel</p>
+                <p>Hennessey</p>
+                <p>Hindustan</p>
+                <p>HiPhi</p>
+                <p>Hispano-Suiza</p>
+                <p>Holden</p>
+                <p>Honda</p>
+                <p>Hongqi</p>
+                <p>Horch</p>
+                <p>Hozon</p>
+                <p>HSV</p>
+                <p>Huaihai (Hoann)</p>
+                <p>HuangHai</p>
+                <p>Huazi</p>
+                <p>Hudson</p>
+                <p>Humber</p>
+                <p>Hummer</p>
+                <p>Hycan</p>
+                <p>Hyperion</p>
+                <p>Hyundai</p>
+                <p>iCar</p>
+                <p>iCaur</p>
+                <p>IM Motors (Zhiji)</p>
+                <p>Ineos</p>
+                <p>Infiniti</p>
+                <p>Innocenti</p>
+                <p>International Harvester</p>
+                <p>Invicta</p>
+                <p>Iran Khodro</p>
+                <p>Isdera</p>
+                <p>Isuzu</p>
+                <p>Iveco</p>
+                <p>JAC</p>
+                <p>Jaecoo</p>
+                <p>Jaguar</p>
+                <p>Jeep</p>
+                <p>Jensen</p>
+                <p>JETOUR</p>
+                <p>Jetta</p>
+                <p>Jiangnan</p>
+                <p>Jidu</p>
+                <p>Jinbei</p>
+                <p>JMC</p>
+                <p>JMEV</p>
+                <p>Jonway</p>
+                <p>Kaiyi</p>
+                <p>Karma</p>
+                <p>Kawei</p>
+                <p>KGM</p>
+                <p>Kia</p>
+                <p>Knewstar</p>
+                <p>Koenigsegg</p>
+                <p>KTM AG</p>
+                <p>KYC</p>
+                <p>Lada (ВАЗ)</p>
+                <p>Lamborghini</p>
+                <p>Lancia</p>
+                <p>Land Rover</p>
+                <p>Landwind</p>
+                <p>Leapmotor</p>
+                <p>Letin</p>
+                <p>LEVC</p>
+                <p>Lexus</p>
+                <p>Liebao Motor</p>
+                <p>Lifan</p>
+                <p>Ligier</p>
+                <p>Lincoln</p>
+                <p>Lingxi</p>
+                <p>Livan</p>
+                <p>Lixiang</p>
+                <p>Logem</p>
+                <p>Lotus</p>
+                <p>LTI</p>
+                <p>Lucid</p>
+                <p>Luxeed</p>
+                <p>Luxgen</p>
+                <p>Lynk & Co</p>
+                <p>M-Hero</p>
+                <p>Maextro</p>
+                <p>Mahindra</p>
+                <p>Maple</p>
+                <p>Marcos</p>
+                <p>Marlin</p>
+                <p>Marussia</p>
+                <p>Maruti</p>
+                <p>Maserati</p>
+                <p>Matra</p>
+                <p>Maxus</p>
+                <p>Maybach</p>
+                <p>Mazda</p>
+                <p>McLaren</p>
+                <p>Mega</p>
+                <p>Mercedes-Benz</p>
+                <p>Mercury</p>
+                <p>Merkur</p>
+                <p>Messerschmitt</p>
+                <p>Metrocab</p>
+                <p>MG</p>
+                <p>Micro</p>
+                <p>Microcar</p>
+                <p>Minelli</p>
+                <p>Mini</p>
+                <p>Mitsubishi</p>
+                <p>Mitsuoka</p>
+                <p>Mobilize</p>
+                <p>Morgan</p>
+                <p>Morris</p>
+                <p>Nash</p>
+                <p>Nevo</p>
+                <p>Nio</p>
+                <p>Nissan</p>
+                <p>Noble</p>
+                <p>Nordcross</p>
+                <p>Oldsmobile</p>
+                <p>Omoda</p>
+                <p>Opel</p>
+                <p>Ora</p>
+                <p>Orange</p>
+                <p>Osca</p>
+                <p>Oshan</p>
+                <p>Oting</p>
+                <p>Overland</p>
+                <p>Packard</p>
+                <p>Pagani</p>
+                <p>Panoz</p>
+                <p>Perodua</p>
+                <p>Peugeot</p>
+                <p>PGO</p>
+                <p>Piaggio</p>
+                <p>Pierce-Arrow</p>
+                <p>Plymouth</p>
+                <p>Polar Stone (Jishi)</p>
+                <p>Polestar</p>
+                <p>Pontiac</p>
+                <p>Porsche</p>
+                <p>Premier</p>
+                <p>Proton</p>
+                <p>Puch</p>
+                <p>Puma</p>
+                <p>Punk</p>
+                <p>Qiantu</p>
+                <p>Qingling</p>
+                <p>Qoros</p>
+                <p>Qvale</p>
+                <p>Radar</p>
+                <p>Radford</p>
+                <p>Ram</p>
+                <p>Ravon</p>
+                <p>Rayton Fissore</p>
+                <p>Reliant</p>
+                <p>Renaissance</p>
+                <p>Renault</p>
+                <p>Renault Samsung</p>
+                <p>Rezvani</p>
+                <p>Rimac</p>
+                <p>Rinspeed</p>
+                <p>Rising Auto</p>
+                <p>Rivian</p>
+                <p>Roewe</p>
+                <p>Rolls-Royce</p>
+                <p>Ronart</p>
+                <p>Rossa</p>
+                <p>Rover</p>
+                <p>Rox</p>
+                <p>Saab</p>
+                <p>Saipa</p>
+                <p>Saleen</p>
+                <p>Sandstorm</p>
+                <p>Santana</p>
+                <p>Saturn</p>
+                <p>Scion</p>
+                <p>Scout</p>
+                <p>Sears</p>
+                <p>SEAT</p>
+                <p>Seres</p>
+                <p>Shanghai Maple</p>
+                <p>ShuangHuan</p>
+                <p>Simca</p>
+                <p>Skoda</p>
+                <p>Skywell</p>
+                <p>Skyworth</p>
+                <p>Smart</p>
+                <p>Solaris</p>
+                <p>Sollers</p>
+                <p>Soueast</p>
+                <p>Spectre</p>
+                <p>Spyker</p>
+                <p>SsangYong</p>
+                <p>Stelato</p>
+                <p>Steyr</p>
+                <p>Studebaker</p>
+                <p>Subaru</p>
+                <p>Suzuki</p>
+                <p>SWM</p>
+                <p>Talbot</p>
+                <p>Tank</p>
+                <p>Tata</p>
+                <p>Tatra</p>
+                <p>Tazzari</p>
+                <p>Tenet</p>
+                <p>Tesla</p>
+                <p>Thairung</p>
+                <p>Think</p>
+                <p>Tianma</p>
+                <p>Tianye</p>
+                <p>Tofas</p>
+                <p>Toyota</p>
+                <p>Trabant</p>
+                <p>Tramontana</p>
+                <p>Triumph</p>
+                <p>TVR</p>
+                <p>Ultima</p>
+                <p>Vauxhall</p>
+                <p>Vector</p>
+                <p>Venturi</p>
+                <p>Venucia</p>
+                <p>VGV</p>
+                <p>VinFast</p>
+                <p>Volga</p>
+                <p>Volkswagen</p>
+                <p>Volvo</p>
+                <p>Vortex</p>
+                <p>Voyah</p>
+                <p>VUHL</p>
+                <p>W Motors</p>
+                <p>Wanderer</p>
+                <p>Wartburg</p>
+                <p>Weltmeister</p>
+                <p>Westfield</p>
+                <p>Wey</p>
+                <p>Wiesmann</p>
+                <p>Willys</p>
+                <p>Wuling</p>
+                <p>Xcite</p>
+                <p>XEV</p>
+                <p>Xiaomi</p>
+                <p>Xin Kai</p>
+                <p>Xpeng</p>
+                <p>Yema</p>
+                <p>Yipai</p>
+                <p>Yulon</p>
+                <p>Zastava</p>
+                <p>Zeekr</p>
+                <p>Zenos</p>
+                <p>Zenvo</p>
+                <p>Zhido</p>
+                <p>Zibar</p>
+                <p>Zotye</p>
+                <p>ZX</p>
+                <p>Автокам</p>
+                <p>Амберавто</p>
+                <p>Атом</p>
+                <p>ГАЗ</p>
+                <p>ЗАЗ</p>
+                <p>ЗИЛ</p>
+                <p>ЗиС</p>
+                <p>Иж</p>
+                <p>Канонир</p>
+                <p>Комбат</p>
+                <p>ЛуАЗ</p>
+                <p>Москвич</p>
+                <p>Руссо-Балт</p>
+                <p>СМЗ</p>
+                <p>Спортивные авто и реплики</p>
+                <p>ТагАЗ</p>
+                <p>УАЗ</p>
+                <p>Ё-мобиль</p>
+            </div>
+        </div>
+        <button class="modal-close-overlay__btn"><img src="icons/icons8-close-button-32 (1).png" alt="Закрыть"></button>
+    </div>
+</div>
+<!-- конец модальной части 1 -->
+<script src="{% static "js/advertisement.js" %}"></script>
+</body>
+</html>
