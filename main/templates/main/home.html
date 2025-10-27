@@ -35,7 +35,35 @@
                 </ul>
             </nav>
             <div class="header-container__buttons">
-                <button class="header-container__account"><img src="{% static "icons/account.png" %}" width="16" height="16"> Войти</button>
+                <div class="header-container__buttons">
+                    {% if user.is_authenticated %}
+                        <div class="account-dropdown">
+                            <button class="header-container__account">
+                                <img src="{% static "icons/account.png" %}" width="16" height="16"> 
+                                {{ user.first_name|default:user.username }}
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#">Мой профиль</a>
+                                <a href="#">Избранное</a>
+                                <a href="#">Мои объявления</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{% url 'logout' %}">Выйти</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="auth-buttons">
+                            <a href="{% url 'login' %}" class="header-container__login">Войти</a>
+                            <a href="{% url 'register' %}" class="header-container__register">Регистрация</a>
+                        </div>
+                    {% endif %}
+                    <button class="header-container__burger">
+                        <div class="burger__lines">
+                            <div class="burger__line"></div>
+                            <div class="burger__line"></div>
+                            <div class="burger__line"></div>
+                        </div>
+                    </button>
+                </div>
                 <button class="header-container__burger">
                     <div class="burger__lines">
                         <div class="burger__line"></div>

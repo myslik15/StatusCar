@@ -111,6 +111,28 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+.user-info {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--color-light-gray);
+    margin-bottom: 5px;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.user-info span {
+    font-size: 12px;
+    color: #666;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .header-container__li:last-child {
     margin-right: 0px;
 }

@@ -206,3 +206,114 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* Auth Buttons Styles */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-container__login {
+    background-color: transparent;
+    border: 1px solid var(--color-card);
+    border-radius: var(--border-radius);
+    padding: 8px 20px;
+    color: var(--color-card);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.header-container__login:hover {
+    background-color: var(--color-search);
+}
+
+.header-container__register {
+    background-color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+    border-radius: var(--border-radius);
+    padding: 8px 20px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.header-container__register:hover {
+    background-color: #3048d8;
+}
+
+/* Account Dropdown Styles */
+.account-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.account-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--color-card);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--color-search);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: var(--color-light-gray);
+    margin: 5px 0;
+}
+
+/* Header Account Button */
+.header-container__account {
+    background-color: transparent;
+    border: 1px solid var(--color-card);
+    border-radius: var(--border-radius);
+    padding: 8px 16px;
+    height: 40px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-family-main);
+    font-size: 14px;
+}
+
+.header-container__account:hover {
+    background-color: var(--color-search);
+}
+
+.header-container__account img {
+    width: 16px;
+    height: 16px;
+}

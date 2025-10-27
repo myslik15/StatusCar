@@ -1,0 +1,474 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Профиль пользователя STATUSCAR">
+    <meta name="author" content="Алексеев Максим Андреевич">
+    <title>Мой профиль | Statuscar</title>
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/profile.css" %}">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container container">
+            <div class="header-container__logo">
+                <div class="header-logo__logo">
+                    <a href="{% url "home" %}"><p>STATUSCAR</p></a>
+                </div>
+                <div class="header-logo__tel">
+                    <img src="{% static "icons/SVG.png" %}" alt="номер телефона" width="16" height="24">
+                    <p>+375-33-333-33-33</p>
+                </div>
+            </div>
+            <nav class="header-container__nav">
+                <ul class="header-container__ul">
+                    <li class="header-container__li"><a href="{% url "selection" %}">Объявления</a></li>
+                    <li class="header-container__li"><a href="#">Каталог</a></li>
+                    <li class="header-container__li"><a href="#">Дилеры</a></li>
+                    <li class="header-container__li"><a href="#">Новости</a></li>
+                    <li class="header-container__li"><a href="#">Отзывы</a></li>
+                    <li class="header-container__li"><a href="#">Бортжурнал</a></li>
+                </ul>
+            </nav>
+            <div class="header-container__buttons">
+                <div class="account-dropdown">
+                    <button class="header-container__account">
+                        <img src="{% static "icons/account.png" %}" width="16" height="16"> 
+                        {{ user.first_name|default:user.username }}
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="{% url 'profile' %}" class="active">
+                            <img src="{% static "icons/profile.png" %}" width="16" height="16">
+                            Мой профиль
+                        </a>
+                        <a href="{% url 'favorites' %}">
+                            <img src="{% static "icons/heart.png" %}" width="16" height="16">
+                            Избранное
+                        </a>
+                        <a href="{% url 'my_ads' %}">
+                            <img src="{% static "icons/car.png" %}" width="16" height="16">
+                            Мои объявления
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="{% url 'logout' %}">
+                            <img src="{% static "icons/logout.png" %}" width="16" height="16">
+                            Выйти
+                        </a>
+                    </div>
+                </div>
+                <button class="header-container__burger">
+                    <div class="burger__lines">
+                        <div class="burger__line"></div>
+                        <div class="burger__line"></div>
+                        <div class="burger__line"></div>
+                    </div>
+                </button>
+            </div>
+        </div> 
+    </header>
+
+    <main class="profile-main">
+        <div class="profile-container container">
+            <!-- Боковая панель -->
+            <aside class="profile-sidebar">
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <img src="{% static "icons/avatar.png" %}" alt="Аватар" width="80" height="80">
+                        <button class="change-avatar-btn">
+                            <img src="{% static "icons/camera.png" %}" width="16" height="16">
+                        </button>
+                    </div>
+                    <div class="user-info">
+                        <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+                        <p class="user-email">{{ user.email }}</p>
+                        <p class="user-phone">{{ user.profile.phone|default:"Телефон не указан" }}</p>
+                        <div class="user-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">{{ user_ads_count|default:0 }}</span>
+                                <span class="stat-label">Объявления</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">{{ user_favorites_count|default:0 }}</span>
+                                <span class="stat-label">Избранное</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="profile-nav">
+                    <a href="#personal" class="nav-item active" data-tab="personal">
+                        <img src="{% static "icons/user.png" %}" width="20" height="20">
+                        Личные данные
+                    </a>
+                    <a href="#security" class="nav-item" data-tab="security">
+                        <img src="{% static "icons/shield.png" %}" width="20" height="20">
+                        Безопасность
+                    </a>
+                    <a href="#notifications" class="nav-item" data-tab="notifications">
+                        <img src="{% static "icons/bell.png" %}" width="20" height="20">
+                        Уведомления
+                    </a>
+                    <a href="#preferences" class="nav-item" data-tab="preferences">
+                        <img src="{% static "icons/settings.png" %}" width="20" height="20">
+                        Настройки
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Основной контент -->
+            <div class="profile-content">
+                <!-- Вкладка личных данных -->
+                <div class="tab-content active" id="personal-tab">
+                    <div class="content-header">
+                        <h2>Личные данные</h2>
+                        <p>Управляйте вашей персональной информацией</p>
+                    </div>
+
+                    <form class="profile-form" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="form_type" value="personal">
+
+                        {% if messages %}
+                        <div class="profile-messages">
+                            {% for message in messages %}
+                            <div class="message {{ message.tags }}">{{ message }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <div class="form-section">
+                            <h4>Основная информация</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first_name">Имя</label>
+                                    <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Фамилия</label>
+                                    <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Контактная информация</h4>
+                            <div class="form-group">
+                                <label for="email">Электронная почта</label>
+                                <input type="email" id="email" name="email" value="{{ user.email }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone" value="{{ user.profile.phone|default:'' }}" placeholder="+375 (XX) XXX-XX-XX">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Дополнительная информация</h4>
+                            <div class="form-group">
+                                <label for="city">Город</label>
+                                <input type="text" id="city" name="city" value="{{ user.profile.city|default:'' }}" placeholder="Ваш город">
+                            </div>
+                            <div class="form-group">
+                                <label for="birth_date">Дата рождения</label>
+                                <input type="date" id="birth_date" name="birth_date" value="{{ user.profile.birth_date|default:'' }}">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="save-btn">Сохранить изменения</button>
+                            <button type="reset" class="cancel-btn">Отмена</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Вкладка безопасности -->
+                <div class="tab-content" id="security-tab">
+                    <div class="content-header">
+                        <h2>Безопасность</h2>
+                        <p>Управление паролем и настройками безопасности</p>
+                    </div>
+
+                    <form class="profile-form" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="form_type" value="security">
+
+                        <div class="form-section">
+                            <h4>Смена пароля</h4>
+                            <div class="form-group">
+                                <label for="current_password">Текущий пароль</label>
+                                <input type="password" id="current_password" name="current_password">
+                                <button type="button" class="toggle-password">
+                                    <img src="{% static "icons/eye-open.png" %}" alt="Показать пароль" width="20" height="20">
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <label for="new_password">Новый пароль</label>
+                                <input type="password" id="new_password" name="new_password">
+                                <button type="button" class="toggle-password">
+                                    <img src="{% static "icons/eye-open.png" %}" alt="Показать пароль" width="20" height="20">
+                                </button>
+                                <div class="password-strength">
+                                    <div class="strength-bar"></div>
+                                    <span class="strength-text">Надежность пароля</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm_password">Подтвердите новый пароль</label>
+                                <input type="password" id="confirm_password" name="confirm_password">
+                                <button type="button" class="toggle-password">
+                                    <img src="{% static "icons/eye-open.png" %}" alt="Показать пароль" width="20" height="20">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Двухфакторная аутентификация</h4>
+                            <div class="security-option">
+                                <div class="option-info">
+                                    <h5>Двухфакторная аутентификация</h5>
+                                    <p>Дополнительная защита вашего аккаунта</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" name="two_factor" {% if user.profile.two_factor_enabled %}checked{% endif %}>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="save-btn">Обновить настройки безопасности</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Вкладка уведомлений -->
+                <div class="tab-content" id="notifications-tab">
+                    <div class="content-header">
+                        <h2>Уведомления</h2>
+                        <p>Настройте получение уведомлений</p>
+                    </div>
+
+                    <form class="profile-form" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="form_type" value="notifications">
+
+                        <div class="form-section">
+                            <h4>Настройки уведомлений</h4>
+                            
+                            <div class="notification-option">
+                                <div class="option-info">
+                                    <h5>Email уведомления</h5>
+                                    <p>Получать уведомления на электронную почту</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" name="email_notifications" {% if user.profile.email_notifications %}checked{% endif %}>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-option">
+                                <div class="option-info">
+                                    <h5>Новые автомобили</h5>
+                                    <p>Уведомления о новых автомобилях по вашим критериям</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" name="new_cars_notifications" {% if user.profile.new_cars_notifications %}checked{% endif %}>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-option">
+                                <div class="option-info">
+                                    <h5>Специальные предложения</h5>
+                                    <p>Акции и специальные предложения от партнеров</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" name="promo_notifications" {% if user.profile.promo_notifications %}checked{% endif %}>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-option">
+                                <div class="option-info">
+                                    <h5>Статус объявлений</h5>
+                                    <p>Уведомления об изменении статуса ваших объявлений</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" name="ads_status_notifications" {% if user.profile.ads_status_notifications %}checked{% endif %}>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Частота уведомлений</h4>
+                            <div class="form-group">
+                                <label for="notification_frequency">Частота отправки уведомлений</label>
+                                <select id="notification_frequency" name="notification_frequency">
+                                    <option value="instant" {% if user.profile.notification_frequency == 'instant' %}selected{% endif %}>Мгновенно</option>
+                                    <option value="daily" {% if user.profile.notification_frequency == 'daily' %}selected{% endif %}>Ежедневно</option>
+                                    <option value="weekly" {% if user.profile.notification_frequency == 'weekly' %}selected{% endif %}>Еженедельно</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="save-btn">Сохранить настройки</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Вкладка настроек -->
+                <div class="tab-content" id="preferences-tab">
+                    <div class="content-header">
+                        <h2>Настройки</h2>
+                        <p>Персональные настройки аккаунта</p>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Язык и регион</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="language">Язык</label>
+                                <select id="language" name="language">
+                                    <option value="ru" {% if user.profile.language == 'ru' %}selected{% endif %}>Русский</option>
+                                    <option value="en" {% if user.profile.language == 'en' %}selected{% endif %}>English</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="currency">Валюта</label>
+                                <select id="currency" name="currency">
+                                    <option value="BYN" {% if user.profile.currency == 'BYN' %}selected{% endif %}>BYN</option>
+                                    <option value="USD" {% if user.profile.currency == 'USD' %}selected{% endif %}>USD</option>
+                                    <option value="EUR" {% if user.profile.currency == 'EUR' %}selected{% endif %}>EUR</option>
+                                    <option value="RUB" {% if user.profile.currency == 'RUB' %}selected{% endif %}>RUB</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Внешний вид</h4>
+                        <div class="form-group">
+                            <label for="theme">Тема оформления</label>
+                            <select id="theme" name="theme">
+                                <option value="light" {% if user.profile.theme == 'light' %}selected{% endif %}>Светлая</option>
+                                <option value="dark" {% if user.profile.theme == 'dark' %}selected{% endif %}>Темная</option>
+                                <option value="auto" {% if user.profile.theme == 'auto' %}selected{% endif %}>Системная</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section danger-zone">
+                        <h4>Опасная зона</h4>
+                        <div class="danger-actions">
+                            <div class="danger-action">
+                                <div class="danger-info">
+                                    <h5>Удалить аккаунт</h5>
+                                    <p>Безвозвратно удалить ваш аккаунт и все данные</p>
+                                </div>
+                                <button type="button" class="danger-btn" id="deleteAccountBtn">Удалить аккаунт</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальное окно удаления аккаунта -->
+    <div id="deleteAccountModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Удаление аккаунта</h3>
+            <p>Вы уверены, что хотите удалить свой аккаунт? Это действие нельзя отменить.</p>
+            <div class="modal-actions">
+                <button class="danger-btn confirm" id="confirmDelete">Да, удалить аккаунт</button>
+                <button class="cancel-btn" id="cancelDelete">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-footer container">
+            <div class="footer-title">
+                <h6>Company</h6>
+                <h6>Quick links</h6>
+                <h6>Наши бренды</h6>
+                <h6>Тип кузова</h6>
+                <h6>Часы работы</h6>
+            </div>
+            <div class="footer__blocks">
+                <div class="footer__block">
+                    <a href="#">Объявления</a>
+                    <a href="#">Каталог</a>
+                    <a href="#">Дилеры</a>
+                    <a href="#">Новости</a>
+                    <a href="#">Отзывы</a>
+                    <a href="#">Бортжурнал</a>
+                </div>
+                <div class="footer__block">
+                    <a href="#">AI Ассистент</a>
+                    <a href="#">Ситуация на рынке</a>
+                    <a href="#">Написать нам</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer__block">
+                    <a href="#">Audi</a>
+                    <a href="#">BMW</a>
+                    <a href="#">Mercedes</a>
+                    <a href="#">Geely</a>
+                    <a href="#">Volvo</a>
+                    <a href="#">Lada</a>
+                    <a href="#">Porsche</a>
+                    <a href="#">Maserati</a>
+                    <a href="#">ЗИЛ</a>
+                    <a href="#">Peugeot</a>
+                </div>
+                <div class="footer__block">
+                    <a href="#">SUV</a>
+                    <a href="#">Седан</a>
+                    <a href="#">Хэтчбэк</a>
+                    <a href="#">Универсал</a>
+                    <a href="#">Купе</a>
+                    <a href="#">Минивэн</a>
+                    <a href="#">Фургон</a>
+                    <a href="#">Пикап</a>
+                </div>
+                <div class="footer__block">
+                    <div class="footer-info">
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="footer-contacts">
+                        <h6>Будьте С Нами</h6>
+                        <p>+7-989-777-77-76</p>
+                        <p>statuscar@mail.com</p>
+                    </div>
+                    <div class="footer-social">
+                        <img src="{% static "icons/icons8-instagram-30.png" %}" alt="Instagram" loading="lazy" width="30" height="30">
+                        <img src="{% static "icons/icons8-viber-30.png" %}" alt="Viber" loading="lazy" width="30" height="30">
+                        <img src="{% static "icons/icons8-телеграм-64.png" %}" alt="Telegram" loading="lazy" width="30" height="30">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="footer-small">
+        <div class="footer-small-container container">
+            <div class="footer-small__block">
+                <img src="{% static "icons/LetterCHexagon.png" %}" width="20" height="20" loading="lazy" alt="">
+                <p>Все права защищены.</p>
+            </div>
+            <div class="footer-small__block">
+                <p>Политика безопасности & конфиденциальности</p>
+            </div>
+        </div>
+    </section>
+    
+    <script src="{% static "js/profile.js" %}"></script>
+</body>
+</html>
