@@ -1,52 +1,7 @@
+{% extends "base.html" %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Регистрация в STATUSCAR">
-    <meta name="author" content="Алексеев Максим Андреевич">
-    <title>Регистрация | Statuscar</title>
-    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
-    <link rel="stylesheet" href="{% static "css/auth.css" %}">
-</head>
-<body>
-    <header class="header">
-        <div class="header-container container">
-            <div class="header-container__logo">
-                <div class="header-logo__logo">
-                    <a href="{% url "home" %}"><p>STATUSCAR</p></a>
-                </div>
-                <div class="header-logo__tel">
-                    <img src="{% static "icons/SVG.png" %}" alt="номер телефона" width="16" height="24">
-                    <p>+375-33-333-33-33</p>
-                </div>
-            </div>
-            <nav class="header-container__nav">
-                <ul class="header-container__ul">
-                    <li class="header-container__li"><a href="{% url "selection" %}">Объявления</a></li>
-                    <li class="header-container__li"><a href="#">Каталог</a></li>
-                    <li class="header-container__li"><a href="#">Дилеры</a></li>
-                    <li class="header-container__li"><a href="#">Новости</a></li>
-                    <li class="header-container__li"><a href="#">Отзывы</a></li>
-                    <li class="header-container__li"><a href="#">Бортжурнал</a></li>
-                </ul>
-            </nav>
-            <div class="header-container__buttons">
-                <button class="header-container__account"><img src="{% static "icons/account.png" %}" width="16" height="16"> Войти</button>
-                <button class="header-container__burger">
-                    <div class="burger__lines">
-                        <div class="burger__line"></div>
-                        <div class="burger__line"></div>
-                        <div class="burger__line"></div>
-                    </div>
-                </button>
-            </div>
-        </div> 
-    </header>
-
+{% block extra_css %}<link rel="stylesheet" href="{% static "css/auth.css" %}">{% endblock extra_css %}
+{% block content %}
     <main class="auth-main">
         <div class="auth-container container">
             <div class="auth-card">
@@ -136,83 +91,7 @@
             </div>
         </div>
     </main>
+{% endblock content %}
 
-    <footer>
-        <div class="container-footer container">
-            <div class="footer-title">
-                <h6>Company</h6>
-                <h6>Quick links</h6>
-                <h6>Наши бренды</h6>
-                <h6>Тип кузова</h6>
-                <h6>Часы работы</h6>
-            </div>
-            <div class="footer__blocks">
-                <div class="footer__block">
-                    <a href="#">Объявления</a>
-                    <a href="#">Каталог</a>
-                    <a href="#">Дилеры</a>
-                    <a href="#">Новости</a>
-                    <a href="#">Отзывы</a>
-                    <a href="#">Бортжурнал</a>
-                </div>
-                <div class="footer__block">
-                    <a href="#">AI Ассистент</a>
-                    <a href="#">Ситуация на рынке</a>
-                    <a href="#">Написать нам</a>
-                    <a href="#">FAQ</a>
-                </div>
-                <div class="footer__block">
-                    <a href="#">Audi</a>
-                    <a href="#">BMW</a>
-                    <a href="#">Mercedes</a>
-                    <a href="#">Geely</a>
-                    <a href="#">Volvo</a>
-                    <a href="#">Lada</a>
-                    <a href="#">Porsche</a>
-                    <a href="#">Maserati</a>
-                    <a href="#">ЗИЛ</a>
-                    <a href="#">Peugeot</a>
-                </div>
-                <div class="footer__block">
-                    <a href="#">SUV</a>
-                    <a href="#">Седан</a>
-                    <a href="#">Хэтчбэк</a>
-                    <a href="#">Универсал</a>
-                    <a href="#">Купе</a>
-                    <a href="#">Минивэн</a>
-                    <a href="#">Фургон</a>
-                    <a href="#">Пикап</a>
-                </div>
-                <div class="footer__block">
-                    <div class="footer-info">
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="footer-contacts">
-                        <h6>Будьте С Нами</h6>
-                        <p>+7-989-777-77-76</p>
-                        <p>statuscar@mail.com</p>
-                    </div>
-                    <div class="footer-social">
-                        <img src="{% static "icons/icons8-instagram-30.png" %}" alt="Instagram" loading="lazy" width="30" height="30">
-                        <img src="{% static "icons/icons8-viber-30.png" %}" alt="Viber" loading="lazy" width="30" height="30">
-                        <img src="{% static "icons/icons8-телеграм-64.png" %}" alt="Telegram" loading="lazy" width="30" height="30">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <section class="footer-small">
-        <div class="footer-small-container container">
-            <div class="footer-small__block">
-                <img src="{% static "icons/LetterCHexagon.png" %}" width="20" height="20" loading="lazy" alt="">
-                <p>Все права защищены.</p>
-            </div>
-            <div class="footer-small__block">
-                <p>Политика безопасности & конфиденциальности</p>
-            </div>
-        </div>
-    </section>
     
-    <script src="{% static "js/auth.js" %}"></script>
-</body>
-</html>
+{% block extra_js %}<script src="{% static "js/auth.js" %}"></script>{% endblock extra_js %}
