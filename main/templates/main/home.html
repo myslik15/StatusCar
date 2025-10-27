@@ -43,7 +43,7 @@
                                 {{ user.first_name|default:user.username }}
                             </button>
                             <div class="dropdown-menu">
-                                <a href="#">Мой профиль</a>
+                                <a href="{% url "profile" %}">Мой профиль</a>
                                 <a href="#">Избранное</a>
                                 <a href="#">Мои объявления</a>
                                 <div class="dropdown-divider"></div>

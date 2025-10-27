@@ -3,25 +3,44 @@ from django.contrib.auth.decorators import login_required
 from users.forms import ProfileForm, UserLoginForm, UserRegisterForm
 from django.contrib import auth
 from django.http import HttpResponseRedirect
+from users.models import User
 from django.urls import reverse
 from django.contrib.auth import logout
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 
+from django.contrib.auth import authenticate, login as auth_login
 
 def login(request):
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
         if form.is_valid():
-            username = request.POST['username']
-            password = request.POST['password']
-            user = auth.authenticate(username=username, password=password)
-            if user:
-                auth.login(request, user)
-                return HttpResponseRedirect(reverse('home')) # reverse to tranform in url adress
+            # Получаем email из формы
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            
+            try:
+                # Находим пользователя по email
+                user = User.objects.get(email=email)
+                # Аутентифицируем по username и password
+                user = authenticate(username=user.username, password=password)
+                
+                if user is not None:
+                    auth_login(request, user)
+                    return HttpResponseRedirect(reverse('home'))
+                else:
+                    # Если пароль неверный
+                    messages.error(request, 'Неверный пароль')
+            except User.DoesNotExist:
+                # Если пользователь не найден
+                messages.error(request, 'Пользователь с таким email не найден')
+        else:
+            # Если форма невалидна
+            messages.error(request, 'Пожалуйста, исправьте ошибки в форме')
     else:
         form = UserLoginForm()
+    
     context = {
         'form': form,   
     }
@@ -50,7 +69,7 @@ def register(request):
 @login_required
 def profile(request):
     if request.method == 'POST':
-        form = ProfileForm(data=request.POST, instance=request.user.profile, files=request.FILES)  # ← исправлено
+        form = ProfileForm(data=request.POST, instance=request.user, files=request.FILES)  # ← исправлено
         if form.is_valid():
             form.save()
             user = request.user
@@ -58,9 +77,9 @@ def profile(request):
             user.last_name = form.cleaned_data['last_name']
             user.email = form.cleaned_data['email']
             user.save()
-            return HttpResponseRedirect(reverse('users:profile'))
+            return HttpResponseRedirect(reverse('profile'))
     else:
-        form = ProfileForm(instance=request.user.profile)  # ← исправлено
+        form = ProfileForm(instance=request.user)  # ← исправлено
     
     context = {
         'form': form,
