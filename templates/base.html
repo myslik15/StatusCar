@@ -10,6 +10,7 @@
     <meta name="author" content="Алексеев Максим Андреевич">
     <title>{% block title %}STATUSCAR{% endblock title %}</title>
     <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
     {% block extra_css %}{% endblock extra_css %}
 </head>
 
@@ -44,6 +45,10 @@
                                 {{ user.first_name|default:user.username }}
                             </button>
                             <div class="dropdown-menu">
+                                {% if user.is_staff %}
+                                <a href="{% url "admin:index" %}">Админка</a>
+                                <div class="dropdown-divider"></div>
+                                {% endif %}
                                 <a href="{% url "profile" %}">Мой профиль</a>
                                 <a href="#">Избранное</a>
                                 <a href="#">Мои объявления</a>

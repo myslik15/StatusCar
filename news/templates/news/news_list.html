@@ -9,131 +9,44 @@
 {% endblock %}
 
 {% block content %}
+{% load news_tags %}
+{% news_tag as news %}
 <section class="news-section">
     <div class="container">
         <!-- Заголовок и фильтры -->
         <div class="news-header">
             <h1>Новости автомобильного мира</h1>
             <p>Актуальные события, обзоры и аналитика автомобильного рынка</p>
-            
-            <div class="news-filters">
-                <button class="filter-btn active" data-filter="all">Все новости</button>
-                <button class="filter-btn" data-filter="reviews">Обзоры</button>
-                <button class="filter-btn" data-filter="market">Рынок</button>
-                <button class="filter-btn" data-filter="technology">Технологии</button>
-                <button class="filter-btn" data-filter="events">События</button>
-            </div>
         </div>
 
         <!-- Сетка новостей -->
         <div class="news-grid">
-            <!-- Новость 1 -->
+            <!-- Новость -->
+            {% if news %}
+            {% for new in news %}
             <article class="news-card" data-category="market">
                 <div class="news-image">
-                    <img src="{% static 'img/news/news-1.jpg' %}" alt="Новость 1">
-                    <span class="news-category">Рынок</span>
+                    <img src={{ new.image.url }} alt="{{ new.title }}">
                 </div>
                 <div class="news-content">
                     <div class="news-meta">
-                        <span class="news-date">26 октября 2025</span>
-                        <span class="news-views">1.2K просмотров</span>
+                        <span class="news-date">{{ new.created_at|date:"d.m.Y" }}</span>
+                        <span class="news-views">{{ new.creator.username }}</span>
                     </div>
-                    <h3>Цены на подержанные автомобили снизились на 15%</h3>
-                    <p class="news-excerpt">Аналитики отмечают значительное снижение цен на рынке б/у автомобилей. 
-                    Какие модели подешевели больше всего?</p>
-                    <a href="#" class="read-more">Подробнее</a>
+                    <h3>{{ new.title }}</h3>
+                    <p class="news-excerpt">{{ new.description|truncatewords:20 }}</p>
+                    <!-- Добавленная ссылка на страницу новости -->
+                    <a href="{% url 'news_detail' new.id %}" class="read-more">Подробнее</a>
                 </div>
             </article>
-
-            <!-- Новость 2 -->
-            <article class="news-card" data-category="technology">
-                <div class="news-image">
-                    <img src="{% static 'img/news/news-2.jpg' %}" alt="Новость 2">
-                    <span class="news-category">Технологии</span>
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">25 октября 2025</span>
-                        <span class="news-views">2.4K просмотров</span>
-                    </div>
-                    <h3>Новая система автономного вождения от Mercedes</h3>
-                    <p class="news-excerpt">Mercedes-Benz представил обновленную систему автономного вождения 
-                    уровня 3. Что умеет новинка и когда появится в России?</p>
-                    <a href="#" class="read-more">Подробнее</a>
-                </div>
-            </article>
-
-            <!-- Новость 3 -->
-            <article class="news-card" data-category="reviews">
-                <div class="news-image">
-                    <img src="{% static 'img/news/news-3.jpg' %}" alt="Новость 3">
-                    <span class="news-category">Обзоры</span>
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">24 октября 2025</span>
-                        <span class="news-views">3.1K просмотров</span>
-                    </div>
-                    <h3>Тест-драйв: BMW i5 2025 года</h3>
-                    <p class="news-excerpt">Провели неделю с новой электрической "пятёркой" от BMW. 
-                    Рассказываем о впечатлениях, плюсах и минусах модели.</p>
-                    <a href="#" class="read-more">Подробнее</a>
-                </div>
-            </article>
-
-            <!-- Новость 4 -->
-            <article class="news-card" data-category="events">
-                <div class="news-image">
-                    <img src="{% static 'img/news/news-4.jpg' %}" alt="Новость 4">
-                    <span class="news-category">События</span>
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">23 октября 2025</span>
-                        <span class="news-views">1.8K просмотров</span>
-                    </div>
-                    <h3>Автосалон в Минске: какие новинки ждать</h3>
-                    <p class="news-excerpt">В ноябре в Минске пройдет крупнейший автосалон года. 
-                    Уже известен список премьер и концепт-каров.</p>
-                    <a href="#" class="read-more">Подробнее</a>
-                </div>
-            </article>
-
-            <!-- Новость 5 -->
+            {% endfor %}
+            {% else %}
             <article class="news-card" data-category="market">
-                <div class="news-image">
-                    <img src="{% static 'img/news/news-5.jpg' %}" alt="Новость 5">
-                    <span class="news-category">Рынок</span>
-                </div>
                 <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">22 октября 2025</span>
-                        <span class="news-views">2.7K просмотров</span>
-                    </div>
-                    <h3>Китайские бренды захватывают 30% рынка Беларуси</h3>
-                    <p class="news-excerpt">Статистика продаж показывает стремительный рост доли китайских 
-                    автомобилей на белорусском рынке.</p>
-                    <a href="#" class="read-more">Подробнее</a>
+                    <h3>Пока что нет новостей</h3>
                 </div>
             </article>
-
-            <!-- Новость 6 -->
-            <article class="news-card" data-category="technology">
-                <div class="news-image">
-                    <img src="{% static 'img/news/news-6.jpg' %}" alt="Новость 6">
-                    <span class="news-category">Технологии</span>
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">21 октября 2025</span>
-                        <span class="news-views">1.5K просмотров</span>
-                    </div>
-                    <h3>Водородные автомобили: есть ли будущее?</h3>
-                    <p class="news-excerpt">Эксперты обсуждают перспективы водородных автомобилей 
-                    в условиях доминирования электромобилей.</p>
-                    <a href="#" class="read-more">Подробнее</a>
-                </div>
-            </article>
+            {% endif %}
         </div>
 
         <!-- Пагинация -->

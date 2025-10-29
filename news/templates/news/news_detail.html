@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ news.title }} | STATUSCAR{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="news-detail-section">
+    <div class="container">
+        <!-- Хлебные крошки -->
+        <nav class="breadcrumbs">
+            <a href="{% url 'home' %}">Главная</a>
+            <span class="separator">/</span>
+            <a href="{% url 'news_list' %}">Новости</a>
+            <span class="separator">/</span>
+            <span class="current">{{ news.title|truncatewords:5 }}</span>
+        </nav>
+
+        <!-- Основной контент новости -->
+        <article class="news-detail">
+            <!-- Заголовок и мета-информация -->
+            <header class="news-detail-header">
+                <div class="news-meta">
+                    <span class="news-date">{{ news.created_at|date:"d.m.Y" }}</span>
+                    <span class="news-author">Автор: {{ news.creator.username }}</span>
+                </div>
+                <h1 class="news-title">{{ news.title }}</h1>
+                <p class="news-excerpt">{{ news.description }}</p>
+            </header>
+
+            <!-- Главное изображение -->
+            <div class="news-hero-image">
+                <img src="{{ news.image.url }}" alt="{{ news.title }}" id="mainNewsImage">
+            </div>
+
+            <!-- Контент новости -->
+            <div class="news-content">
+                <div class="news-text">
+                    {{ news.content|linebreaks }}
+                </div>
+                <!-- Теги -->
+                <div class="news-tags">
+                    {% for tag in news.tags.all %}
+                    <span class="news-tag">{{ tag.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+
+        <!-- Похожие новости -->
+        <section class="related-news">
+            <h2>Читайте также</h2>
+            <div class="related-grid">
+                {% for related in related_news %}
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="{{ related.image.url }}" alt="{{ related.title }}">
+                    </div>
+                    <div class="related-content">
+                        <h3>
+                            <a href="{% url 'news_detail' related.id %}">{{ related.title }}</a>
+                        </h3>
+                        <p class="related-excerpt">{{ related.description|truncatewords:15 }}</p>
+                        <div class="related-meta">
+                            <span class="related-date">{{ related.created_at|date:"d.m.Y" }}</span>
+                            <span class="related-views">{{ related.views }} просмотров</span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</section>
+
+<!-- Модальное окно для изображения -->
+<div class="modal" id="imageModal">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <img src="" alt="" id="modalImage">
+        <button class="modal-nav modal-prev" id="modalPrev">‹</button>
+        <button class="modal-nav modal-next" id="modalNext">›</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/news_detail.js' %}"></script>
+{% endblock %}
