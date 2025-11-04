@@ -1632,3 +1632,82 @@ body {
   text-decoration: none;
   color: var(--color-card);
 }
+
+/* Стили для формы фильтрации */
+select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-div__condition button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-div__condition button.form-div-condition__all-active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.clear-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-results-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .form__div-2,
+    .form__div-3,
+    .form__div-4 {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-div-2__left,
+    .form-div-2__center,
+    .form-div-2__right,
+    .form-div-3__left,
+    .form-div-3__center,
+    .form-div-3__right,
+    .form-div-4__left,
+    .form-div-4__center,
+    .form-div-4__right {
+        width: 100%;
+    }
+}

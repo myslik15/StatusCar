@@ -1,44 +1,43 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Объявление</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="car.css">
+    <title>{{ adv.car.brand }} {{ adv.car.model }} - {{ adv.price }} BYN | STATUSCAR</title>
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/car.css' %}">
 </head>
 <body>
     <header class="header">
         <div class="header__top container">
             <div class="header-top__logo">
-                <img src="icons/icons8-меню-50.png">
+                <img src="{% static 'icons/icons8-меню-50.png' %}" alt="Меню">
                 <h2>STATUSCAR</h2>
             </div>
             <div class="header-top__search">
-                <img src="icons/icons8-поиск-50.png">
+                <img src="{% static 'icons/icons8-поиск-50.png' %}" alt="Поиск">
                 <input type="text" placeholder="поиск по объявлениям">
             </div>
             <div class="header-top__buttons">
                 <button class="header-top-buttons__button">
-                    <img src="icons/icons8-сердце-48.png">
+                    <img src="{% static 'icons/icons8-сердце-48.png' %}" alt="Избранное">
                     <p>Избранное</p>
                 </button>
                 <button class="header-top-buttons__button">
-                    <img src="icons/free-icon-compare-5575998.png">
+                    <img src="{% static 'icons/free-icon-compare-5575998.png' %}" alt="Сравнения">
                     <p>Сравнения</p>
                 </button>
                 <button class="header-top-buttons__button">
-                    <img src="icons/icons8-поиск-любви-48.png">
+                    <img src="{% static 'icons/icons8-поиск-любви-48.png' %}" alt="Поиск">
                     <p>Поиск</p>
                 </button>
                 <button class="header-top-buttons__button">
-                    <img src="icons/free-icon-writing-6570260.png">
+                    <img src="{% static 'icons/free-icon-writing-6570260.png' %}" alt="Сообщения">
                     <p>Сообщения</p>
                 </button>
                 <button class="header-top-buttons__button">
-                    <img src="icons/free-icon-car-16076122.png">
+                    <img src="{% static 'icons/free-icon-car-16076122.png' %}" alt="Я продаю">
                     <p>Я продаю</p>
                 </button>
             </div>
@@ -60,396 +59,243 @@
         </div>
         <div class="header__bottom">
             <div class="header-bottom__left">
-                <a href="#">Объявления</a>
+                <a href="{% url 'selection' %}">Объявления</a>
                 <a href="#">Отзывы</a>
                 <a href="#">Бортжурнал</a>
             </div>
             <div class="header-bottom__right">
                 <button>
-                    <img src="icons/icons8-маркер-40.png">Регион
+                    <img src="{% static 'icons/icons8-маркер-40.png' %}" alt="Регион">Регион
                 </button>
             </div>
         </div>
         <div class="header__divider"></div>
     </header>
-    <div class="advertisement">
+
+    <div class="advertisement container">
         <div class="advertisement__left">
             <div class="advertisement__title">
                 <div class="advertisement-title__left">
-                    <h1>Lada (ВАЗ) Vesta Sport I, 2021</h1>
+                    <h1>{{ adv.car.brand }} {{ adv.car.model }} {{ adv.car.generation }}, {{ adv.car.year }}</h1>
                 </div>
                 <div class="advertisement-title__right">
-                    <h5>1 410 000 ₽</h5>
+                    <h5>{{ adv.price }} BYN</h5>
                 </div>
             </div>
-            <div class="advertisement-after-title">
-                <div class="advertisement-after-title__left">
-                    <div class="advertisement-after-title-left__rating">
-                        <p>Рейтинг модели</p>
-                        <p>⭐</p>
-                    </div>
-                    <div class="advertisement-after-title-left__data">
-                        <p>13 октября</p>
-                        <p>145</p>
-                    </div>
-                    <div class="advertisement-after-title-left__number">
-                        <p>№ 129980141</p>
-                    </div>
-                </div>
-                <div class="advertisement-after-title__right">
-                    <h4>Подробнее про оценку стоимости</h4>
-                </div>
-            </div>
+            
             <div class="advertisement__contacts">
                 <div class="advertisement-contacts__check-seller">
-                    <img src="icons/shield_14867667.png">
+                    <img src="{% static 'icons/shield_14867667.png' %}" alt="Проверенный продавец">
                 </div>
                 <div class="advertisement-contacts__name">
                     <div class="advertisement-contacts-name__top">
-                        <p>Дебрянск авто</p>
-                        <img src="">
+                        <p>{{ adv.first_name }} {{ adv.last_name }}</p>
+                        <span class="verified-badge">✓</span>
                     </div>
                     <div class="advertisement-contacts-name__bottom">
-                        <p>Супонево, ул. Шоссейная д. 32.</p>
+                        <p>Минск, Беларусь</p>
                     </div>
                 </div>
                 <div class="advertisement-contacts__divider"></div>
                 <div class="advertisement-contacts__message">
-                    <img src="icons/chat_5801758.png">
+                    <img src="{% static 'icons/chat_5801758.png' %}" alt="Написать сообщение">
                 </div>
                 <div class="advertisement-contacts__divider"></div>
                 <div class="advertisement-contacts__callback">
-                    <img src="icons/incoming-call_6760179.png">
+                    <img src="{% static 'icons/incoming-call_6760179.png' %}" alt="Обратный звонок">
                     <h6>Обратный звонок</h6>
                 </div>
                 <div class="advertisement-contacts__phone">
-                    <h5>Показать номер</h5>
+                    <h5 class="show-phone-btn">Показать номер</h5>
                     <div class="contacts-phone__circles">
                         <div class="contacts-phone__plus">+</div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
-                        <div class="contacts-phone__circle"></div>
+                            {% for i in "x"|ljust:"10" %}
+                            <div class="contacts-phone__circle"></div>
+                            {% endfor %}
                     </div>
                 </div>
             </div>
+            
             <div class="advertisement-about">
                 <div class="advertisement-about__left">
-                    <h5>Владение</h5>
+                    <h5>Основное</h5>
                     <div class="advertisement-about-left__block">
                         <p>Год выпуска</p>
-                        <p>2021</p>
+                        <p>{{ adv.car.year }}</p>
                     </div>
                     <div class="advertisement-about-left__block">
                         <p>Пробег</p>
-                        <p>25321 км</p>
+                        <p>{{ adv.car.mileage|floatformat:0 }} км</p>
                     </div>
                     <div class="advertisement-about-left__block">
-                        <p>Налог</p>
-                        <p>120 byn в год</p>
+                        <p>Состояние</p>
+                        <p>{% if adv.damage %}С повреждениями{% else %}Отличное{% endif %}</p>
                     </div>
+                    
                     <h5>Характеристики</h5>
                     <div class="advertisement-about-left__characteristics-block">
                         <div class="characteristics-block__left">
-                            <img src="icons/engine_271914.png">
+                            <img src="{% static 'icons/engine_271914.png' %}" alt="Двигатель">
                         </div>
                         <div class="characteristics-block__right">
                             <p>Двигатель</p>
-                            <h6>1.8 л, 145 л.с., бензин</h6>
+                            <h6>{{ adv.car.engine_volume }}, {{ adv.car.engine_type }}</h6>
                         </div>
                     </div>
 
                     <div class="advertisement-about-left__characteristics-block">
                         <div class="characteristics-block__left">
-                            <img src="icons/geabox_18066120.png">
+                            <img src="{% static 'icons/geabox_18066120.png' %}" alt="Коробка передач">
                         </div>
                         <div class="characteristics-block__right">
                             <p>Коробка</p>
-                            <h6>Механическая</h6>
+                            <h6>{{ adv.car.transmission }}</h6>
                         </div>
                     </div>
 
                     <div class="advertisement-about-left__characteristics-block">
                         <div class="characteristics-block__left">
-                            <img src="icons/chassis_556947.png">
+                            <img src="{% static 'icons/chassis_556947.png' %}" alt="Привод">
                         </div>
                         <div class="characteristics-block__right">
                             <p>Привод</p>
-                            <h6>Передний</h6>
+                            <h6>{{ adv.car.drive_type }}</h6>
                         </div>
                     </div>
 
                     <div class="advertisement-about-left__characteristics-block">
                         <div class="characteristics-block__left">
-                            <img src="icons/transport.png">
+                            <img src="{% static 'icons/transport.png' %}" alt="Кузов">
                         </div>
                         <div class="characteristics-block__right">
                             <p>Кузов</p>
-                            <h6>Седан</h6>
+                            <h6>{{ adv.car.body_type }}</h6>
                         </div>
                     </div>
 
                     <div class="advertisement-about-left__characteristics-block">
                         <div class="characteristics-block__left">
-                            <img src="icons/brush_9873308.png">
+                            <img src="{% static 'icons/brush_9873308.png' %}" alt="Цвет">
                         </div>
                         <div class="characteristics-block__right">
                             <p>Цвет</p>
-                            <h6>Синий</h6>
+                            <h6>{{ adv.car.color }}</h6>
                         </div>
                     </div>
 
-                    <button class="status-characteristics__btn">Статусные характеристики</button>
+                    {% if adv.damage and adv.damage_description %}
+                    <div class="advertisement-about-left__damage">
+                        <h5>Повреждения</h5>
+                        <p>{{ adv.damage_description }}</p>
+                    </div>
+                    {% endif %}
                 </div>
+                
                 <div class="advertisement-about__right">
                     <div class="advertisement-about-right__main-photo">
-                        <img src="img/a6-c8.jpg">
-                        <div class="advertisement-about-right-main-photo__left-arrow"></div>
-                        <div class="advertisement-about-right-main-photo__right-arrow"></div>
+                        <img src="{{ adv.photo_1.url }}" alt="{{ adv.car.brand }} {{ adv.car.model }}" id="mainPhoto">
+                        <button class="advertisement-about-right-main-photo__left-arrow" id="prevPhoto">‹</button>
+                        <button class="advertisement-about-right-main-photo__right-arrow" id="nextPhoto">›</button>
                     </div>
                     <div class="advertisement-about-right__additionally-photo">
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/a6-c8.jpg">
+                        <div class="advertisement-about-right-additionally-photo__block active" data-photo="{{ adv.photo_1.url }}">
+                            <img src="{{ adv.photo_1.url }}" alt="Фото 1">
                         </div>
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/Audi_A6_45_TFSI_S_Line_C8_Daytona_Grey_Metallic_(2).jpg">
+                        {% if adv.photo_2 %}
+                        <div class="advertisement-about-right-additionally-photo__block" data-photo="{{ adv.photo_2.url }}">
+                            <img src="{{ adv.photo_2.url }}" alt="Фото 2">
                         </div>
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
+                        {% endif %}
+                        {% if adv.photo_3 %}
+                        <div class="advertisement-about-right-additionally-photo__block" data-photo="{{ adv.photo_3.url }}">
+                            <img src="{{ adv.photo_3.url }}" alt="Фото 3">
                         </div>
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/9021.jpg">
+                        {% endif %}
+                        {% if adv.photo_4 %}
+                        <div class="advertisement-about-right-additionally-photo__block" data-photo="{{ adv.photo_4.url }}">
+                            <img src="{{ adv.photo_4.url }}" alt="Фото 4">
                         </div>
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/a6 c7jpg.jpg">
-                        </div>
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/a6 c5.jpg">
-                        </div>
-                         <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/9021.jpg">
-                        </div>
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/a6 c7jpg.jpg">
-                        </div>
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/Audi_A6_45_TFSI_S_Line_C8_Daytona_Grey_Metallic_(2).jpg">
-                        </div>
-                        <div class="advertisement-about-right-additionally-photo__block">
-                            <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Описание от продавца -->
+            <div class="advertisement-description">
+                <h3>Описание</h3>
+                <p>Продается {{ adv.car.brand }} {{ adv.car.model }} {{ adv.car.year }} года в отличном состоянии. 
+                   Автомобиль полностью обслужен, все расходники заменены. 
+                   {% if not adv.damage %}Без аварий, все оригинальные детали.{% endif %}
+                   Срочная продажа в связи с переездом.</p>
+            </div>
+        </div>
+        
+        <div class="advertisement__right">
+            <div class="advertisement-sidebar">    
+                <div class="sidebar-block">
+                    <h4>Здесь будет реклама</h4>
+                    <div class="status-indicators">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="advertisement__right"></div>
+        </div>            
     </div>
+    
     <div class="divider"></div>
 
-    <!-- Другие объявления -->
-    <div class="list-of-cars">
-        <div class="car">
-            <div class="car-like">
-                <button><img src="icons/icons8-сердце-50.png"></button>
-            </div>
-            <!-- <div class="car-recently-viewed">
-                <p>Вы смотрели</p>
-            </div> -->
-            <img src="icons/a6 c5.jpg">
-            <div class="car-img__slider">
-                <img src="img/a6 c7jpg.jpg">
-                <img src="img/a6-c8.jpg">
-                <img src="img/Audi_A6_45_TFSI_S_Line_C8_Daytona_Grey_Metallic_(2).jpg">
-                <img src="img/9021.jpg">
-                <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
-                <div class="car-img-slider__buttons">
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
+    <!-- Похожие объявления -->
+    <section class="similar-ads container">
+        <h2>Похожие автомобили</h2>
+        <div class="list-of-cars">
+            {% for similar_adv in similar_ads %}
+            <div class="car">
+                <div class="car-like">
+                    <button><img src="{% static 'icons/icons8-сердце-50.png' %}" alt="В избранное"></button>
                 </div>
-            </div>
-            <h2>19235 BYN</h2>
-            <h5>Lada (ВАЗ) Vesta Sport I</h5>
-            <p>2020/29854 км</p>
-        </div>
-
-         <div class="car">
-            <div class="car-like">
-                <button><img src="icons/icons8-сердце-50.png"></button>
-            </div>
-            <!-- <div class="car-recently-viewed">
-                <p>Вы смотрели</p>
-            </div> -->
-            <img src="icons/a6 c5.jpg">
-            <div class="car-img__slider">
-                <img src="img/a6 c7jpg.jpg">
-                <img src="img/a6-c8.jpg">
-                <img src="img/Audi_A6_45_TFSI_S_Line_C8_Daytona_Grey_Metallic_(2).jpg">
-                <img src="img/9021.jpg">
-                <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
-                <div class="car-img-slider__buttons">
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
+                <div class="car-image">
+                    <img src="{{ similar_adv.photo_1.url }}" alt="{{ similar_adv.car.brand }} {{ similar_adv.car.model }}">
                 </div>
+                <h2>{{ similar_adv.price }} BYN</h2>
+                <h5>{{ similar_adv.car.brand }} {{ similar_adv.car.model }}</h5>
+                <p>{{ similar_adv.car.year }} / {{ similar_adv.car.mileage|floatformat:0 }} км</p>
+                <a href="{% url 'car' similar_adv.id %}" class="car-link">Посмотреть</a>
             </div>
-            <h2>19235 BYN</h2>
-            <h5>Lada (ВАЗ) Vesta Sport I</h5>
-            <p>2020/29854 км</p>
+            {% empty %}
+            <div class="no-similar-ads">
+                <p>Нет похожих объявлений</p>
+            </div>
+            {% endfor %}
         </div>
+    </section>
 
-
-        <div class="car">
-            <div class="car-like">
-                <button><img src="icons/icons8-сердце-50.png"></button>
-            </div>
-            <!-- <div class="car-recently-viewed">
-                <p>Вы смотрели</p>
-            </div> -->
-            <img src="icons/a6 c5.jpg">
-            <div class="car-img__slider">
-                <img src="img/a6 c7jpg.jpg">
-                <img src="img/a6-c8.jpg">
-                <img src="img/Audi_A6_45_TFSI_S_Line_C8_Daytona_Grey_Metallic_(2).jpg">
-                <img src="img/9021.jpg">
-                <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
-                <div class="car-img-slider__buttons">
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                </div>
-            </div>
-            <h2>19235 BYN</h2>
-            <h5>Lada (ВАЗ) Vesta Sport I</h5>
-            <p>2020/29854 км</p>
-        </div>
-
-
-
-        <div class="car">
-            <div class="car-like">
-                <button><img src="icons/icons8-сердце-50.png"></button>
-            </div>
-            <!-- <div class="car-recently-viewed">
-                <p>Вы смотрели</p>
-            </div> -->
-            <img src="icons/a6 c5.jpg">
-            <div class="car-img__slider">
-                <img src="img/a6 c7jpg.jpg">
-                <img src="img/a6-c8.jpg">
-                <img src="img/Audi_A6_45_TFSI_S_Line_C8_Daytona_Grey_Metallic_(2).jpg">
-                <img src="img/9021.jpg">
-                <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
-                <div class="car-img-slider__buttons">
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                </div>
-            </div>
-            <h2>19235 BYN</h2>
-            <h5>Lada (ВАЗ) Vesta Sport I</h5>
-            <p>2020/29854 км</p>
-        </div>
-
-         <div class="car">
-            <div class="car-like">
-                <button><img src="icons/icons8-сердце-50.png"></button>
-            </div>
-            <!-- <div class="car-recently-viewed">
-                <p>Вы смотрели</p>
-            </div> -->
-            <img src="icons/a6 c5.jpg">
-            <div class="car-img__slider">
-                <img src="img/a6 c7jpg.jpg">
-                <img src="img/a6-c8.jpg">
-                <img src="img/Audi_A6_45_TFSI_S_Line_C8_Daytona_Grey_Metallic_(2).jpg">
-                <img src="img/9021.jpg">
-                <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
-                <div class="car-img-slider__buttons">
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                </div>
-            </div>
-            <h2>19235 BYN</h2>
-            <h5>Lada (ВАЗ) Vesta Sport I</h5>
-            <p>2020/29854 км</p>
-        </div>
-
-         <div class="car">
-            <div class="car-like">
-                <button><img src="icons/icons8-сердце-50.png"></button>
-            </div>
-            <div class="car-recently-viewed">
-                <p>Вы смотрели</p>
-            </div>
-            <img src="icons/a6 c5.jpg">
-            <div class="car-img__slider">
-                <img src="img/a6 c7jpg.jpg">
-                <img src="img/a6-c8.jpg">
-                <img src="img/Audi_A6_45_TFSI_S_Line_C8_Daytona_Grey_Metallic_(2).jpg">
-                <img src="img/9021.jpg">
-                <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
-                <div class="car-img-slider__buttons">
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                    <div class="car-img-slider-button"></div>
-                </div>
-            </div>
-            <h2>19235 BYN</h2>
-            <h5>Lada (ВАЗ) Vesta Sport I</h5>
-            <p>2020/29854 км</p>
-        </div>
-
-    </div>
-
-    <!-- Модальное окно показа номера телефона  -->
-    <div class="show-phone-number__overlay">
+    <!-- Модальное окно показа номера телефона -->
+    <div class="show-phone-number__overlay" id="phoneOverlay">
         <div class="show-phone-number">
             <div class="show-phone-number__top">
                 <div class="show-phone-number-top__title">
                     <div class="show-phone-number-top-title__left">
-                        <p>Владислав</p>
+                        <p>{{ adv.first_name }} {{ adv.last_name }}</p>
                         <p>Частное лицо</p>
                     </div>
                     <div class="show-phone-number-top-title__right">
-                        <img src="icons/channels4_profile.jpg">
+                        <img src="{% static 'icons/default-avatar.png' %}" alt="Аватар">
                     </div>
                 </div>
                 <div class="show-phone-number-top__first-block">
                     <div class="show-phone-number-top__phone">
                         <div class="show-phone-number-top-phone__left">
-                            <h1>+375-(33)-333-33-02</h1>
+                            <h1>+375 (29) XXX-XX-XX</h1>
                             <p>с 10:00 до 19:00</p>
                         </div>
                         <div class="show-phone-number-top-phone__right">
-                            <img src="img/icons8-qr-код-64.png">
+                            <img src="{% static 'icons/icons8-qr-код-64.png' %}" alt="QR код">
                             <p>Наведите на QR-код камеру телефона, чтобы позвонить</p>
                         </div>
                     </div>
                     <div class="show-phone-number-top__warning">
                         <div class="show-phone-number-top-warning__left">
-                            <img src="icons/exclamation-mark.svg">
+                            <img src="{% static 'icons/exclamation-mark.svg' %}" alt="Внимание">
                         </div>
                         <div class="show-phone-number-top-warning__right">
                             <p>Внимание</p>
@@ -458,34 +304,36 @@
                     </div>
                 </div>
                 <div class="show-phone-number-top__second-block">
-                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A33ac79e35e77badbc088f4ad24559105e2afed1e8b6f076ee91c0446279b668f&amp;source=constructor" width="560" height="300" frameborder="0"></iframe>
-                    <a href="https://taxi.yandex.ru/" class="show-phone-number-top-second-block__yandex">
-                        <img src="icons/yandex-svg-icon.png">Доехать с Яндекс такси
+                    <div class="map-placeholder">
+                        <p>Карта местоположения</p>
+                    </div>
+                    <a href="#" class="show-phone-number-top-second-block__yandex">
+                        <img src="{% static 'icons/yandex-svg-icon.png' %}" alt="Яндекс Такси">Доехать с Яндекс такси
                     </a>
                     <button class="show-phone-number-top-second-block__back">Показать телефон</button>
                 </div>
                 <div class="divider-show-phone"></div>
-                <button class="show-phone-number-top__btn">Минск, ул. Михаила Крыжаноускага</button>
+                <button class="show-phone-number-top__btn">Минск, ул. Примерная</button>
             </div>
             <div class="show-phone-number__bottom">
                 <div class="show-phone-number-bottom__container">
                     <div class="show-phone-number-bottom__img">
-                        <img src="img/a6-c8.jpg">
+                        <img src="{{ adv.photo_1.url }}" alt="{{ adv.car.brand }} {{ adv.car.model }}">
                     </div>
                     <div class="show-phone-number-bottom__brand">
-                        <h5>Lada (ВАЗ) Vesta Sport I</h5>
-                        <p>1.8 л / 145 л.с. / Бензин</p>
-                        <p>седан</p>
-                        <p>синий</p>
+                        <h5>{{ adv.car.brand }} {{ adv.car.model }}</h5>
+                        <p>{{ adv.car.engine_volume }}, {{ adv.car.engine_type }}</p>
+                        <p>{{ adv.car.body_type }}</p>
+                        <p>{{ adv.car.color }}</p>
                     </div>
                     <div class="show-phone-number-bottom__price">
-                        <h5>23 586 BYN</h5>
-                        <p>Механика</p>
-                        <p>Передний</p>
+                        <h5>{{ adv.price }} BYN</h5>
+                        <p>{{ adv.car.transmission }}</p>
+                        <p>{{ adv.car.drive_type }}</p>
                     </div>
                     <div class="show-phone-number-bottom__buttons">
-                        <button><img src="icons/block.png"></button>
-                        <button><img src="icons/health.png"></button>
+                        <button><img src="{% static 'icons/block.png' %}" alt="Заблокировать"></button>
+                        <button><img src="{% static 'icons/health.png' %}" alt="В избранное"></button>
                     </div>
                 </div>
                 <div class="show-phone-number-bottom__input">
@@ -493,47 +341,36 @@
                 </div>  
             </div>
         </div>
-        <button class="show-phone-number__overlay-btn">X</button>
+        <button class="show-phone-number__overlay-btn" id="closePhoneOverlay">X</button>
     </div>
     
-    <div class="car-photo__modal">
-        <button class="car-photo-modal__close-btn">X</button>
+    <!-- Модальное окно фотографий -->
+    <div class="car-photo__modal" id="photoModal">
+        <button class="car-photo-modal__close-btn" id="closePhotoModal">X</button>
         <div class="car-photo-modal__left">
             <div class="car-photo-modal-left__top-button">
                 <div class="car-photo-modal-left-top-button__button"></div>
             </div>
             <div class="car-photo-modal-left__photos-container">
                 <div class="car-photo-modal-left__photos">
-                    <div class="car-photo-modal-left__photo">
-                        <img src="img/9021.jpg">
+                    <div class="car-photo-modal-left__photo active">
+                        <img src="{{ adv.photo_1.url }}" alt="Фото 1">
                     </div>
+                    {% if adv.photo_2 %}
                     <div class="car-photo-modal-left__photo">
-                        <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
+                        <img src="{{ adv.photo_2.url }}" alt="Фото 2">
                     </div>
+                    {% endif %}
+                    {% if adv.photo_3 %}
                     <div class="car-photo-modal-left__photo">
-                        <img src="img/a6-c8.jpg">
+                        <img src="{{ adv.photo_3.url }}" alt="Фото 3">
                     </div>
+                    {% endif %}
+                    {% if adv.photo_4 %}
                     <div class="car-photo-modal-left__photo">
-                        <img src="img/a6-c8.jpg">
+                        <img src="{{ adv.photo_4.url }}" alt="Фото 4">
                     </div>
-                    <div class="car-photo-modal-left__photo">
-                        <img src="img/a6-c8.jpg">
-                    </div>
-                    <div class="car-photo-modal-left__photo">
-                        <img src="img/a6-c8.jpg">
-                    </div>
-                    <div class="car-photo-modal-left__photo">
-                        <img src="img/a6-c8.jpg">
-                    </div>
-                    <div class="car-photo-modal-left__photo">
-                        <img src="img/a6-c8.jpg">
-                    </div>
-                    <div class="car-photo-modal-left__photo">
-                        <img src="img/a6-c8.jpg">
-                    </div>
-                    <div class="car-photo-modal-left__photo">
-                        <img src="img/a6 c7jpg.jpg">
-                    </div>
+                    {% endif %}
                 </div>
             </div>
             <div class="car-photo-modal-left__bottom-button">
@@ -541,33 +378,32 @@
             </div>
         </div>
         <div class="car-photo-modal__middle">
-            <img src="img/9021.jpg">
-            <img src="img/TUVl6fZt9LWu6GoN0XsYB4DOywk-960.jpg">
-            <img src="img/a6-c8.jpg">
-            <img src="img/a6 c7jpg.jpg">
+            <img src="{{ adv.photo_1.url }}" alt="{{ adv.car.brand }} {{ adv.car.model }}" id="modalMainPhoto">
         </div>
         <div class="car-photo-modal__right">
-            <h2>23 555 BYN</h2>
-            <p>Audi S6 III (c6), 2007г</p>
-            <p>220 000 км</p>
+            <h2>{{ adv.price }} BYN</h2>
+            <p>{{ adv.car.brand }} {{ adv.car.model }} {{ adv.car.generation }}, {{ adv.car.year }}</p>
+            <p>{{ adv.car.mileage|floatformat:0 }} км</p>
             <div class="car-photo-modal-right__number">
-                <h5>+375-(33)-333-33-02</h5>
+                <h5>+375 (29) XXX-XX-XX</h5>
                 <p>Круглосуточно</p>
             </div>
-            <button><img src="">Написать</button>
+            <button class="write-message-btn">
+                <img src="{% static 'icons/chat_5801758.png' %}" alt="Написать">Написать
+            </button>
         </div>
     </div>
 
-
-    <div class="callback__overlay">
-        <button class="callback__close-btn">X</button>
+    <!-- Модальное окно обратного звонка -->
+    <div class="callback__overlay" id="callbackOverlay">
+        <button class="callback__close-btn" id="closeCallbackOverlay">X</button>
         <div class="callback__modal">
             <h2>Обратный звонок</h2>
-            <p>ШикАвто Минск • Работает c 10:00 до 19:00</p>
-            <input class="callback-modal__call-time" readonly>
+            <p>{{ adv.first_name }} • Работает c 10:00 до 19:00</p>
+            <input class="callback-modal__call-time" readonly placeholder="Выберите время звонка">
             <div class="callback-modal-call-time__modal">
                 <p>Сегодня</p>
-                    <div class="callback-modal-call-time-modal__modal-today">
+                <div class="callback-modal-call-time-modal__modal-today">
                     <p>Как можно скорее</p>
                     <p>с 16:00 до 19:00</p>
                 </div>
@@ -577,13 +413,14 @@
                     <p>с 16:00 до 19:00</p>
                 </div>
             </div>
-            <input class="callback-modal__phone-number" readonly>
+            <input class="callback-modal__phone-number" readonly placeholder="Ваш номер телефона">
             <button class="callback-modal__confirm">
                 Подтвердить номер
             </button>
             <p>Отправляя заявку, я соглашаюсь с условиями <a href="#">пользовательского соглашения</a></p>
         </div>
     </div>
-    <script src="car.js"></script>
+    
+    <script src="{% static 'js/car.js' %}"></script>
 </body>
 </html>

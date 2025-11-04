@@ -1,58 +1,58 @@
 {% load static %}
-{% load adv_tags %}
-{% tag_adv as advertisements %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Подбор авто</title>
-    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
-    <link rel="stylesheet" href="{% static "css/selection.css" %}">
+    <title>Подбор авто | STATUSCAR</title>
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/selection.css' %}">
 </head>
 <body>
     <header class="header">
-
         <div class="header-top">
             <div class="header-top-container container">
                 <div class="header-top__logo">
-                    <button class="header-top__burger"><img src="icons/icons8-меню-50.png"></button>
-                    <p>STATUSWHEEL</p>
+                    <button class="header-top__burger">
+                        <img src="{% static 'icons/icons8-меню-50.png' %}" alt="Меню">
+                    </button>
+                    <p>STATUSCAR</p>
                 </div>
                 
                 <div class="header-top__search">
-                    <label>
-                    </label>
-                    <input placeholder="Поиск по объявлениям">
+                    <label for="search-input"></label>
+                    <input id="search-input" placeholder="Поиск по объявлениям">
                 </div>
                 
                 <div class="header-top__services">
                     <div class="header-top-services__div-1">
-                        <img src="icons/icons8-сердце-48.png" width="30" height="30">
+                        <img src="{% static 'icons/icons8-сердце-48.png' %}" width="30" height="30" alt="Избранное">
                         <p>Избранное</p>
                     </div>
                     <div class="header-top-services__div-2">
-                        <img src="icons/free-icon-compare-5575998.png" width="30" height="30">
+                        <img src="{% static 'icons/free-icon-compare-5575998.png' %}" width="30" height="30" alt="Сравнения">
                         <p>Сравнения</p>
                     </div>
                     <div class="header-top-services__div-2">
-                        <img src="icons/icons8-поиск-любви-48.png" width="30" height="30">
+                        <img src="{% static 'icons/icons8-поиск-любви-48.png' %}" width="30" height="30" alt="Поиски">
                         <p>Поиски</p>
                     </div>
                     <div class="header-top-services__div-3">
-                        <img src="icons/free-icon-writing-6570260.png" width="30" height="30">
+                        <img src="{% static 'icons/free-icon-writing-6570260.png' %}" width="30" height="30" alt="Сообщения">
                         <p>Сообщения</p>
                     </div>
                     <div class="header-top-services__div-4">
-                        <img src="icons/free-icon-car-16076122.png" width="30" height="30">
+                        <img src="{% static 'icons/free-icon-car-16076122.png' %}" width="30" height="30" alt="Я продаю">
                         <p>Я продаю</p>
                     </div>
                 </div>
                 
                 <div class="header-top__buttons">
                     <button class="header-top-buttons__entrance">Войти</button>
-                    <button class="header-top-buttons__place-an-ad">Разместить объявление</button>
+                    <a href="{% url "adv" %}">
+                        <button class="header-top-buttons__place-an-ad">Разместить объявление</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -62,17 +62,11 @@
                 <nav>
                     <ul>
                         <li><a href="#">Виртуальная примерочная</a></li>
-                        <!-- как вы будете смотреться с авто -->
                         <li><a href="#">Статус-рекомендации</a></li>
-                        <!-- рекомендация авто по професии -->
                         <li><a href="#">Статус-фильтры</a></li>
-                         <!-- рекомендация авто по на основе опросника клиента !-->
                         <li><a href="#">Калькулятор содержания</a></li>
-                        <!-- сможете ли вы содержать данное авто при занимаемой должности -->
-                        <li><a href="#">Статус-тренды</a></li> 
-                        <!-- графики престижа той или иной марки, ее ценообразование -->
+                        <li><a href="#">Статус-тренды</a></li>
                         <li><a href="#">Проверить историю</a></li>
-                        <!-- проверяем историю авто -->
                         <li><a href="#">История поисков</a></li>
                     </ul>
                 </nav>
@@ -83,204 +77,187 @@
             <div class="header-bottom-container container">
                 <nav>
                     <ul>
-                        <li><a href="#">Объявления</a></li>
+                        <li><a href="{% url 'selection' %}">Объявления</a></li>
                         <li><a href="#">Отзывы</a></li>
                         <li><a href="#">Бортжурнал</a></li>
                     </ul>
                 </nav>
                 <div class="header-bottom-container__location">
-                    <button><img src="icons/icons8-маркер-40.png" width="30" height="30"> Регион</button>
+                    <button>
+                        <img src="{% static 'icons/icons8-маркер-40.png' %}" width="30" height="30" alt="Регион">
+                        Регион
+                    </button>
                 </div>
             </div>
         </div>
     </header>
+    
     <div class="divider"></div>
-    <main class="main">
-        <div class="main__left">
-            <div class="main-container container">
+    
+<main class="main">
+    <div class="main__left">
+        <div class="main-container container">
             <p>Купить авто</p>
             <h2>Купить авто</h2>
-            <div class="main-container__form">
+
+            <!-- Форма фильтрации -->
+            <form method="get" class="main-container__form">
                 <div class="form__div-1">
                     <div class="form-div__condition">
-                        <button class="form-div-condition__all form-div-condition__all-active">Все</button>
-                        <button>Новые</button>
-                        <button>С пробегом</button>
+                        {{ form.condition }}
                     </div>
                 </div>
-            </div>
-            <div class="form__div-2">
-                <div class="form-div-2__left">
-                    <label></label>
-                    <input placeholder="Марка">
-                    <button>+</button>
+
+                <div class="form__div-2">
+                    <div class="form-div-2__left">
+                        {{ form.brand }}
+                        <button type="button">+</button>
+                    </div>
+                    <div class="form-div-2__center">
+                        {{ form.model }}
+                    </div>
+                    <div class="form-div-2__right">
+                        {{ form.generation }}
+                    </div>
+                    <button type="reset" class="clear-btn">×</button>
                 </div>
-                <div class="form-div-2__center">
-                    <label></label>
-                    <input placeholder="Модель">
+
+                <div class="form__div-3">
+                    <div class="form-div-3__left">
+                        {{ form.body_type }}
+                        {{ form.transmission }}
+                    </div>
+                    <div class="form-div-3__center">
+                        {{ form.engine_type }}
+                        {{ form.drive_type }}
+                    </div>
+                    <div class="form-div-3__right">
+                        {{ form.engine_volume_min }}
+                        {{ form.engine_volume_max }}
+                    </div>
                 </div>
-                <div class="form-div-2__right">
-                    <label></label>
-                    <input placeholder="Поколение">
+
+                <div class="form__div-4">
+                    <div class="form-div-4__left">
+                        {{ form.year_min }}
+                        {{ form.year_max }}
+                    </div>
+                    <div class="form-div-4__center">
+                        {{ form.mileage_min }}
+                        {{ form.mileage_max }}
+                    </div>
+                    <div class="form-div-4__right">
+                        {{ form.price_min }}
+                        {{ form.price_max }}
+                    </div>
                 </div>
-            <button>x</button>
-            </div>
-            <div class="form__div-3">
-                <div class="form-div-3__left">
-                    <input placeholder="Кузов">
-                    <input placeholder="Коробка">
+
+                <div class="form__div-5">
+                    <div class="form-div-5__left">
+                        <button type="button">
+                            <img src="{% static 'icons/settings-icon.png' %}" alt="Настройки">
+                            Все параметры <span>Без ДТП</span>
+                        </button>
+                    </div>
+                    <div class="form-div-5__right">
+                        <button type="submit" class="show-results-btn">
+                            Показать {{ advertisements.count }} предложений
+                        </button>
+                    </div>
                 </div>
-                <div class="form-div-3__center">
-                    <input placeholder="Двигатель">
-                    <input placeholder="Привод">
-                </div>
-                <div class="form-div-3__right">
-                    <input placeholder="Объем от, л">
-                    <input placeholder="до">
-                </div>
-            </div>
-            <div class="form__div-4">
-                <div class="form-div-4__left">
-                    <input placeholder="Год от">
-                    <input placeholder="до">
-                </div>
-                <div class="form-div-4__center">
-                    <input placeholder="Пробег от, км">
-                    <input placeholder="до">
-                </div>
-                <div class="form-div-4__right">
-                    <input placeholder="Цена от, BYN">
-                    <input placeholder="до">
-                </div>
-            </div>
-            <div class="form__div-5">
-                <div class="form-div-5__left">
-                    <button><img src="">Все параметры <span>Без ДТП</span></button>
-                </div>
-                <div class="form-div-5__right">
-                    <button>Показать N предложение</button>
-                </div>
-            </div>
+            </form>
         </div>
+
+        <!-- Сохраненный поиск -->
         <div class="main-left__save-search">
             <div class="save-search__left">
-                <p>756 532 предложение</p>
+                <p>{{ advertisements.count }} предложений</p>
             </div>
             <div class="save-search__right">
-                <button><img src="icons/icons8-поиск-любви-48.png" width="30" height="30">Сохранить поиск</button>
+                <button>
+                    <img src="{% static 'icons/icons8-поиск-любви-48.png' %}" width="30" height="30" alt="Сохранить поиск">
+                    Сохранить поиск
+                </button>
             </div>
         </div>
-        <div class="main-divider"></div>
-        <div class="main-brands">
-            <div class="main-brand">
-                <button><img src="icons/bmw-svg-icon.png" width="20" height="20">BMW <span>56347</span></button>
-            </div>
-            <div class="main-brand">
-                <button><img src="icons/lada-svg-icon.png" width="20" height="20">Lada <span>833344</span></button>
-            </div>
-            <div class="main-brand">
-                <button><img src="icons/audi-svg-icon.png" width="20" height="20">Audi <span>209</span></button>
-            </div>
-            <div class="main-brand">
-                <button><img src="icons/opel-svg-icon.png" width="20" height="20">Opel <span>7344</span></button>
-            </div>
-            <div class="main-brand">
-                <button><img src="icons/peugeot-svg-icon.png" width="20" height="20">Peugeot <span>56344</span></button>
-            </div>
-            <div class="main-brand">
-                <button><img src="icons/peugeot-svg-icon.png" width="20" height="20">Peugeot <span>56344</span></button>
-            </div>
-            <div class="main-brand">
-                <button><img src="icons/lamborghini-alt-svg-icon.png" width="20" height="20">Lamborghini <span>5</span></button>
-            </div>
-            <div class="main-brand">
-                <button><img src="icons/mercedes-svg-icon.png" width="20" height="20">Мercedes-benz <span>66665</span></button>
-            </div>
-            <div class="main-brand">
-                <button><img src="icons/landrover-svg-icon.png" width="20" height="20">Range-rover <span>10200</span></button>
-            </div>
-            <div class="main-brand main-brand-all">
-                <button>Все марки</button>
-            </div>
-        </div>
-        <div class="main__left-ad">
-            <p>Реклама (пока нет)</p>
-        </div>
-        <div class="main-filter">
-           <button><img src="icons/Arrow Up Down SVG Icon.svg" width="20" height="20">По актуальности</button>
-        </div>
+
+        <!-- Список объявлений -->
         <section class="main-ads">
-            
-            <!-- Объявление -->
             {% for adv in advertisements %}
-            <a href="car.html" class="main-ad-a">
+            <a href="{% url 'car' adv.id %}" class="main-ad-a">
                 <div class="main-ad">
                     <div class="main-ad__left">
-                        <img src="{{ adv.photo_1.url }}">
+                        <img src="{{ adv.photo_1.url }}" alt="{{ adv.car.brand }} {{ adv.car.model }}" loading="lazy">
                     </div>
                     <div class="main-ad__right">
                         <div class="main-ad__title">
-                            <h2>{{adv.car.title}}</h2>
-                            <h4>{{adv.car.year}}</h4>
-                            <h3>{{adv.price}} BYN</h3>
+                            <h2>{{ adv.car.brand }} {{ adv.car.model }}</h2>
+                            <h4>{{ adv.car.year }} год</h4>
+                            <h3>{{ adv.price }} BYN</h3>
                         </div>
                         <div class="main-ad__brief">
-                            <p>{{adv.car.color}}</p>
-                            <p>{{adv.car.mileage}} км</p>
-                            {% comment %} <div class="main-ad-brief__price">
-                                <p class="main-ad-brief__excessive-price"><img src="icons/icons8-стрелка-вверх-50.png" width="20" height="20">Завышенная цена</p>
-                            </div> {% endcomment %}
+                            <p>{{ adv.car.color }}</p>
+                            <p>{{ adv.car.mileage }} км</p>
                         </div>
                         <div class="main-ad__additional">
                             <div class="main-ad-additional__left">
-                                <p>{{adv.car.engine_volume}}, {{adv.car.engine_type}}</p>
-                                <p>{{adv.car.body_type}}</p>
+                                <p>{{ adv.car.engine_volume }}, {{ adv.car.engine_type }}</p>
+                                <p>{{ adv.car.body_type }}</p>
                             </div>
                             <div class="main-ad-additional__right">
-                                <p>{{adv.car.drive_type}}</p>
-                                <p>{{adv.car.transmission}}</p>
+                                <p>{{ adv.car.drive_type }}</p>
+                                <p>{{ adv.car.transmission }}</p>
                             </div>
                         </div>
                         <div class="main-ad__buttons">
-                            <button class="show-phone"><img src="{% static "icons/icons8-телефон-50.png" %}" width="20" height="20"> Показать телефон</button>
-                            <button class="write-message"><img src="{% static "icons/message.png" %}" width="20" height="20"> Написать</button>
+                            <button class="show-phone">
+                                <img src="{% static 'icons/icons8-телефон-50.png' %}" width="20" height="20" alt="Телефон">
+                                Показать телефон
+                            </button>
+                            <button class="write-message">
+                                <img src="{% static 'icons/message.png' %}" width="20" height="20" alt="Сообщение">
+                                Написать
+                            </button>
                         </div>
                         <div class="main-add__seller">
                             <div class="main-ad-seller__left">
                                 <div class="ad-seller-left__who-sell">
-                                    <p>Audi-центр Минск</p> 
+                                    <p>{{ adv.first_name }}</p> 
                                     <p class="seller-rate">⭐️ 5.0</p>
                                     <p class="status-pro">pro</p>
                                 </div>
                                 <div class="checked-seller__div">
-                                    <img src="{% static "icons/icons8-щит-безопасности-64.png" %}" width="20" height="20">
-                                    <p class="checked-seller"> Проверенный продавец</p>
+                                    <img src="{% static 'icons/icons8-щит-безопасности-64.png' %}" width="20" height="20" alt="Проверенный">
+                                    <p class="checked-seller">Проверенный продавец</p>
                                 </div>
                                 <div class="ad-seller-left__adress">
-                                    <p>Ул. Куйбышева пом. 22</p>
+                                    <p>Минск</p>
                                 </div>
                             </div>
                             <div class="main-ad-seller__right">
-                                <button><img src="{% static "icons/icons8-многоточие-50.png" %}" width="30" height="30"></button>
-                                <button><img src="{% static "icons/free-icon-compare-5575998.png" %}" width="30" height="30" alt="Функция сравнения авто"></button>
-                                <button><img src="{% static "icons/icons8-сердце-48.png" %}" width="30" height="30" alt="Функция добавления в избранное"></button>
+                                <button>
+                                    <img src="{% static 'icons/icons8-многоточие-50.png' %}" width="30" height="30" alt="Еще">
+                                </button>
+                                <button>
+                                    <img src="{% static 'icons/free-icon-compare-5575998.png' %}" width="30" height="30" alt="Сравнить">
+                                </button>
+                                <button>
+                                    <img src="{% static 'icons/icons8-сердце-48.png' %}" width="30" height="30" alt="В избранное">
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
+            {% empty %}
+            <div class="no-ads">
+                <p>Объявления не найдены</p>
+            </div>
             {% endfor %}
-
-            
         </section>
-        </div>
-        <aside class="main__right">
-           <p>Реклама (пока нет)</p>
-        </aside>
-    </main>
-    
-   <!-- Кнопка закрытия с фиксированным позиционированием -->
+    </div>
+</main>
 
-    <script src="{% static "js/section.js" %}"></script>
+    <script src="{% static 'js/section.js' %}"></script>
 </body>
 </html>
